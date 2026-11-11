@@ -1,0 +1,930 @@
+{
+  "Nova": {
+    "Idle": {
+      "frames": [
+        "assets/level1/nova-tactical/Nova_Idle_00.png",
+        "assets/level1/nova-tactical/Nova_Idle_01.png",
+        "assets/level1/nova-tactical/Nova_Idle_02.png",
+        "assets/level1/nova-tactical/Nova_Idle_03.png",
+        "assets/level1/nova-tactical/Nova_Idle_04.png"
+      ],
+      "fps": 5,
+      "loop": true,
+      "source": "source-assets/Tactical Hero Animation Sprite Sheet.cleaned.png",
+      "sourceRow": 0,
+      "sourceRects": [
+        [
+          194,
+          8,
+          326,
+          159
+        ],
+        [
+          333,
+          8,
+          465,
+          159
+        ],
+        [
+          472,
+          8,
+          604,
+          159
+        ],
+        [
+          611,
+          8,
+          743,
+          159
+        ],
+        [
+          750,
+          8,
+          882,
+          159
+        ]
+      ],
+      "placements": [
+        [
+          20,
+          21,
+          90,
+          103
+        ],
+        [
+          20,
+          21,
+          90,
+          103
+        ],
+        [
+          20,
+          21,
+          90,
+          103
+        ],
+        [
+          20,
+          21,
+          90,
+          103
+        ],
+        [
+          20,
+          21,
+          90,
+          103
+        ]
+      ],
+      "fallback": false
+    },
+    "Run": {
+      "frames": [
+        "assets/level1/nova-tactical/Nova_Run_00.png",
+        "assets/level1/nova-tactical/Nova_Run_01.png",
+        "assets/level1/nova-tactical/Nova_Run_02.png",
+        "assets/level1/nova-tactical/Nova_Run_03.png",
+        "assets/level1/nova-tactical/Nova_Run_04.png",
+        "assets/level1/nova-tactical/Nova_Run_05.png",
+        "assets/level1/nova-tactical/Nova_Run_06.png",
+        "assets/level1/nova-tactical/Nova_Run_07.png"
+      ],
+      "fps": 12,
+      "loop": true,
+      "source": "source-assets/Tactical Hero Animation Sprite Sheet.cleaned.png",
+      "sourceRow": 2,
+      "sourceRects": [
+        [
+          194,
+          294,
+          326,
+          419
+        ],
+        [
+          333,
+          294,
+          465,
+          419
+        ],
+        [
+          472,
+          294,
+          604,
+          419
+        ],
+        [
+          611,
+          294,
+          743,
+          419
+        ],
+        [
+          750,
+          294,
+          882,
+          419
+        ],
+        [
+          889,
+          294,
+          1021,
+          419
+        ],
+        [
+          1028,
+          294,
+          1160,
+          419
+        ],
+        [
+          1167,
+          294,
+          1299,
+          419
+        ]
+      ],
+      "placements": [
+        [
+          20,
+          38,
+          90,
+          85
+        ],
+        [
+          20,
+          38,
+          90,
+          85
+        ],
+        [
+          20,
+          38,
+          90,
+          85
+        ],
+        [
+          20,
+          38,
+          90,
+          85
+        ],
+        [
+          20,
+          38,
+          90,
+          85
+        ],
+        [
+          20,
+          38,
+          90,
+          85
+        ],
+        [
+          20,
+          38,
+          90,
+          85
+        ],
+        [
+          20,
+          38,
+          90,
+          85
+        ]
+      ],
+      "fallback": false
+    },
+    "Jump": {
+      "frames": [
+        "assets/level1/nova-tactical/Nova_Jump_00.png",
+        "assets/level1/nova-tactical/Nova_Jump_01.png",
+        "assets/level1/nova-tactical/Nova_Jump_02.png",
+        "assets/level1/nova-tactical/Nova_Jump_03.png",
+        "assets/level1/nova-tactical/Nova_Jump_04.png",
+        "assets/level1/nova-tactical/Nova_Jump_05.png"
+      ],
+      "fps": 9,
+      "loop": false,
+      "source": "source-assets/Tactical Hero Animation Sprite Sheet.cleaned.png",
+      "sourceRow": 3,
+      "sourceRects": [
+        [
+          194,
+          423,
+          326,
+          545
+        ],
+        [
+          333,
+          423,
+          465,
+          545
+        ],
+        [
+          472,
+          423,
+          604,
+          545
+        ],
+        [
+          611,
+          423,
+          743,
+          545
+        ],
+        [
+          750,
+          423,
+          882,
+          545
+        ],
+        [
+          889,
+          423,
+          1021,
+          545
+        ]
+      ],
+      "placements": [
+        [
+          20,
+          40,
+          90,
+          83
+        ],
+        [
+          20,
+          40,
+          90,
+          83
+        ],
+        [
+          20,
+          40,
+          90,
+          83
+        ],
+        [
+          20,
+          40,
+          90,
+          83
+        ],
+        [
+          20,
+          40,
+          90,
+          83
+        ],
+        [
+          20,
+          40,
+          90,
+          83
+        ]
+      ],
+      "fallback": false
+    },
+    "Climb": {
+      "frames": [
+        "assets/level1/nova-tactical/Nova_Climb_00.png",
+        "assets/level1/nova-tactical/Nova_Climb_01.png",
+        "assets/level1/nova-tactical/Nova_Climb_02.png",
+        "assets/level1/nova-tactical/Nova_Climb_03.png"
+      ],
+      "fps": 7,
+      "loop": true,
+      "source": "Nova_Complete_Sprite_Sheet.png",
+      "sourceRow": -1,
+      "sourceRects": [
+        [
+          0,
+          320,
+          48,
+          384
+        ],
+        [
+          48,
+          320,
+          96,
+          384
+        ],
+        [
+          96,
+          320,
+          144,
+          384
+        ],
+        [
+          144,
+          320,
+          192,
+          384
+        ]
+      ],
+      "placements": [
+        [
+          22,
+          12,
+          83,
+          111
+        ],
+        [
+          22,
+          12,
+          83,
+          111
+        ],
+        [
+          22,
+          12,
+          83,
+          111
+        ],
+        [
+          22,
+          12,
+          83,
+          111
+        ]
+      ],
+      "fallback": true
+    },
+    "Pulse": {
+      "frames": [
+        "assets/level1/nova-tactical/Nova_Pulse_00.png",
+        "assets/level1/nova-tactical/Nova_Pulse_01.png",
+        "assets/level1/nova-tactical/Nova_Pulse_02.png",
+        "assets/level1/nova-tactical/Nova_Pulse_03.png",
+        "assets/level1/nova-tactical/Nova_Pulse_04.png",
+        "assets/level1/nova-tactical/Nova_Pulse_05.png"
+      ],
+      "fps": 13,
+      "loop": false,
+      "source": "source-assets/Tactical Hero Animation Sprite Sheet.cleaned.png",
+      "sourceRow": 4,
+      "sourceRects": [
+        [
+          194,
+          548,
+          326,
+          663
+        ],
+        [
+          333,
+          548,
+          465,
+          663
+        ],
+        [
+          472,
+          548,
+          620,
+          663
+        ],
+        [
+          628,
+          548,
+          768,
+          663
+        ],
+        [
+          773,
+          548,
+          882,
+          663
+        ],
+        [
+          889,
+          548,
+          1021,
+          663
+        ]
+      ],
+      "placements": [
+        [
+          20,
+          45,
+          90,
+          78
+        ],
+        [
+          20,
+          45,
+          90,
+          78
+        ],
+        [
+          20,
+          45,
+          101,
+          78
+        ],
+        [
+          32,
+          45,
+          95,
+          78
+        ],
+        [
+          36,
+          45,
+          74,
+          78
+        ],
+        [
+          20,
+          45,
+          90,
+          78
+        ]
+      ],
+      "fallback": false
+    },
+    "Interact": {
+      "frames": [
+        "assets/level1/nova-tactical/Nova_Interact_00.png",
+        "assets/level1/nova-tactical/Nova_Interact_01.png",
+        "assets/level1/nova-tactical/Nova_Interact_02.png",
+        "assets/level1/nova-tactical/Nova_Interact_03.png",
+        "assets/level1/nova-tactical/Nova_Interact_04.png",
+        "assets/level1/nova-tactical/Nova_Interact_05.png"
+      ],
+      "fps": 9,
+      "loop": false,
+      "source": "source-assets/Tactical Hero Animation Sprite Sheet.cleaned.png",
+      "sourceRow": 5,
+      "sourceRects": [
+        [
+          194,
+          666,
+          326,
+          788
+        ],
+        [
+          333,
+          666,
+          465,
+          788
+        ],
+        [
+          472,
+          666,
+          604,
+          788
+        ],
+        [
+          611,
+          666,
+          743,
+          788
+        ],
+        [
+          750,
+          666,
+          882,
+          788
+        ],
+        [
+          889,
+          666,
+          1021,
+          788
+        ]
+      ],
+      "placements": [
+        [
+          20,
+          40,
+          90,
+          83
+        ],
+        [
+          20,
+          40,
+          90,
+          83
+        ],
+        [
+          20,
+          40,
+          90,
+          83
+        ],
+        [
+          20,
+          40,
+          90,
+          83
+        ],
+        [
+          20,
+          40,
+          90,
+          83
+        ],
+        [
+          20,
+          40,
+          90,
+          83
+        ]
+      ],
+      "fallback": false
+    },
+    "Hurt": {
+      "frames": [
+        "assets/level1/nova-tactical/Nova_Hurt_00.png",
+        "assets/level1/nova-tactical/Nova_Hurt_01.png",
+        "assets/level1/nova-tactical/Nova_Hurt_02.png",
+        "assets/level1/nova-tactical/Nova_Hurt_03.png"
+      ],
+      "fps": 10,
+      "loop": false,
+      "source": "source-assets/Tactical Hero Animation Sprite Sheet.cleaned.png",
+      "sourceRow": 6,
+      "sourceRects": [
+        [
+          194,
+          791,
+          326,
+          902
+        ],
+        [
+          333,
+          791,
+          465,
+          902
+        ],
+        [
+          472,
+          791,
+          604,
+          902
+        ],
+        [
+          611,
+          791,
+          743,
+          902
+        ]
+      ],
+      "placements": [
+        [
+          20,
+          49,
+          90,
+          75
+        ],
+        [
+          20,
+          49,
+          90,
+          75
+        ],
+        [
+          20,
+          49,
+          90,
+          75
+        ],
+        [
+          20,
+          49,
+          90,
+          75
+        ]
+      ],
+      "fallback": false
+    },
+    "Defeat": {
+      "frames": [
+        "assets/level1/nova-tactical/Nova_Defeat_00.png",
+        "assets/level1/nova-tactical/Nova_Defeat_01.png",
+        "assets/level1/nova-tactical/Nova_Defeat_02.png",
+        "assets/level1/nova-tactical/Nova_Defeat_03.png",
+        "assets/level1/nova-tactical/Nova_Defeat_04.png",
+        "assets/level1/nova-tactical/Nova_Defeat_05.png"
+      ],
+      "fps": 7,
+      "loop": false,
+      "source": "source-assets/Tactical Hero Animation Sprite Sheet.cleaned.png",
+      "sourceRow": 7,
+      "sourceRects": [
+        [
+          194,
+          905,
+          326,
+          1014
+        ],
+        [
+          333,
+          905,
+          465,
+          1014
+        ],
+        [
+          472,
+          905,
+          604,
+          1014
+        ],
+        [
+          611,
+          905,
+          743,
+          1014
+        ],
+        [
+          750,
+          905,
+          882,
+          1014
+        ],
+        [
+          889,
+          905,
+          1021,
+          1014
+        ]
+      ],
+      "placements": [
+        [
+          20,
+          61,
+          90,
+          74
+        ],
+        [
+          20,
+          61,
+          90,
+          74
+        ],
+        [
+          20,
+          61,
+          90,
+          74
+        ],
+        [
+          20,
+          61,
+          90,
+          74
+        ],
+        [
+          20,
+          61,
+          90,
+          74
+        ],
+        [
+          20,
+          61,
+          90,
+          74
+        ]
+      ],
+      "fallback": false
+    },
+    "ClimbSide": {
+      "frames": [
+        "assets/level1/nova-tactical/Nova_ClimbSide_00.png",
+        "assets/level1/nova-tactical/Nova_ClimbSide_01.png",
+        "assets/level1/nova-tactical/Nova_ClimbSide_02.png",
+        "assets/level1/nova-tactical/Nova_ClimbSide_03.png"
+      ],
+      "fps": 7,
+      "loop": true,
+      "source": "Nova_Complete_Sprite_Sheet.png",
+      "sourceRow": -1,
+      "sourceRects": [
+        [
+          0,
+          256,
+          48,
+          320
+        ],
+        [
+          48,
+          256,
+          96,
+          320
+        ],
+        [
+          96,
+          256,
+          144,
+          320
+        ],
+        [
+          144,
+          256,
+          192,
+          320
+        ]
+      ],
+      "placements": [
+        [
+          22,
+          12,
+          83,
+          111
+        ],
+        [
+          22,
+          12,
+          83,
+          111
+        ],
+        [
+          22,
+          12,
+          83,
+          111
+        ],
+        [
+          22,
+          12,
+          83,
+          111
+        ]
+      ],
+      "fallback": true
+    },
+    "Walk": {
+      "frames": [
+        "assets/level1/nova-tactical/Nova_Walk_00.png",
+        "assets/level1/nova-tactical/Nova_Walk_01.png",
+        "assets/level1/nova-tactical/Nova_Walk_02.png",
+        "assets/level1/nova-tactical/Nova_Walk_03.png",
+        "assets/level1/nova-tactical/Nova_Walk_04.png",
+        "assets/level1/nova-tactical/Nova_Walk_05.png",
+        "assets/level1/nova-tactical/Nova_Walk_06.png",
+        "assets/level1/nova-tactical/Nova_Walk_07.png"
+      ],
+      "fps": 9,
+      "loop": true,
+      "source": "source-assets/Tactical Hero Animation Sprite Sheet.cleaned.png",
+      "sourceRow": 1,
+      "sourceRects": [
+        [
+          194,
+          162,
+          326,
+          290
+        ],
+        [
+          333,
+          162,
+          465,
+          290
+        ],
+        [
+          472,
+          162,
+          604,
+          290
+        ],
+        [
+          611,
+          162,
+          743,
+          290
+        ],
+        [
+          750,
+          162,
+          882,
+          290
+        ],
+        [
+          889,
+          162,
+          1021,
+          290
+        ],
+        [
+          1028,
+          162,
+          1160,
+          290
+        ],
+        [
+          1167,
+          162,
+          1299,
+          290
+        ]
+      ],
+      "placements": [
+        [
+          20,
+          36,
+          90,
+          87
+        ],
+        [
+          20,
+          36,
+          90,
+          87
+        ],
+        [
+          20,
+          36,
+          90,
+          87
+        ],
+        [
+          20,
+          36,
+          90,
+          87
+        ],
+        [
+          20,
+          36,
+          90,
+          87
+        ],
+        [
+          20,
+          36,
+          90,
+          87
+        ],
+        [
+          20,
+          36,
+          90,
+          87
+        ],
+        [
+          20,
+          36,
+          90,
+          87
+        ]
+      ],
+      "fallback": false
+    }
+  },
+  "Volt": {
+    "Hover": {
+      "frames": [
+        "assets/level1/characters/Volt_Hover_00.png",
+        "assets/level1/characters/Volt_Hover_01.png",
+        "assets/level1/characters/Volt_Hover_02.png",
+        "assets/level1/characters/Volt_Hover_03.png"
+      ],
+      "fps": 6,
+      "loop": true,
+      "source": "source-assets/Volt/Volt’s four-frame hover cycle-2.png"
+    },
+    "Speak": {
+      "frames": [
+        "assets/level1/characters/Volt_Speak_00.png",
+        "assets/level1/characters/Volt_Speak_01.png",
+        "assets/level1/characters/Volt_Speak_02.png",
+        "assets/level1/characters/Volt_Speak_03.png"
+      ],
+      "fps": 8,
+      "loop": true,
+      "source": "source-assets/Volt/Volt Robot Four-Frame Speaking Animation-3.png"
+    },
+    "Hint": {
+      "frames": [
+        "assets/level1/characters/Volt_Hint_00.png",
+        "assets/level1/characters/Volt_Hint_01.png",
+        "assets/level1/characters/Volt_Hint_02.png",
+        "assets/level1/characters/Volt_Hint_03.png"
+      ],
+      "fps": 6,
+      "loop": true,
+      "source": "source-assets/Volt/Volt Pixel Robot Hint Strip-7.png"
+    },
+    "Happy": {
+      "frames": [
+        "assets/level1/characters/Volt_Happy_00.png",
+        "assets/level1/characters/Volt_Happy_01.png",
+        "assets/level1/characters/Volt_Happy_02.png",
+        "assets/level1/characters/Volt_Happy_03.png"
+      ],
+      "fps": 7,
+      "loop": true,
+      "source": "source-assets/Volt/Happy Volt Robot Four-Frame Pixel Strip-6.png"
+    },
+    "Worried": {
+      "frames": [
+        "assets/level1/characters/Volt_Worried_00.png",
+        "assets/level1/characters/Volt_Worried_01.png"
+      ],
+      "fps": 5,
+      "loop": true,
+      "source": "source-assets/Volt/Worried Volt Robot Pixel Animation-5.png"
+    }
+  }
+}

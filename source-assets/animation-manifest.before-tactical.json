@@ -1,0 +1,451 @@
+{
+  "Nova": {
+    "Idle": {
+      "frames": [
+        "assets/level1/nova-complete/Nova_Idle_00.png",
+        "assets/level1/nova-complete/Nova_Idle_01.png",
+        "assets/level1/nova-complete/Nova_Idle_02.png",
+        "assets/level1/nova-complete/Nova_Idle_03.png"
+      ],
+      "fps": 5,
+      "loop": true,
+      "source": "Nova_Complete_Sprite_Sheet.png",
+      "sourceRow": 1,
+      "cellSize": [
+        48,
+        64
+      ],
+      "sourceRects": [
+        [
+          0,
+          64,
+          48,
+          128
+        ],
+        [
+          48,
+          64,
+          96,
+          128
+        ],
+        [
+          96,
+          64,
+          144,
+          128
+        ],
+        [
+          144,
+          64,
+          192,
+          128
+        ]
+      ]
+    },
+    "Run": {
+      "frames": [
+        "assets/level1/nova-complete/Nova_Run_00.png",
+        "assets/level1/nova-complete/Nova_Run_01.png",
+        "assets/level1/nova-complete/Nova_Run_02.png",
+        "assets/level1/nova-complete/Nova_Run_03.png",
+        "assets/level1/nova-complete/Nova_Run_04.png",
+        "assets/level1/nova-complete/Nova_Run_05.png"
+      ],
+      "fps": 11,
+      "loop": true,
+      "source": "Nova_Complete_Sprite_Sheet.png",
+      "sourceRow": 2,
+      "cellSize": [
+        48,
+        64
+      ],
+      "sourceRects": [
+        [
+          0,
+          128,
+          48,
+          192
+        ],
+        [
+          48,
+          128,
+          96,
+          192
+        ],
+        [
+          96,
+          128,
+          144,
+          192
+        ],
+        [
+          144,
+          128,
+          192,
+          192
+        ],
+        [
+          192,
+          128,
+          240,
+          192
+        ],
+        [
+          240,
+          128,
+          288,
+          192
+        ]
+      ]
+    },
+    "Jump": {
+      "frames": [
+        "assets/level1/nova-complete/Nova_Jump_00.png",
+        "assets/level1/nova-complete/Nova_Jump_01.png",
+        "assets/level1/nova-complete/Nova_Jump_02.png",
+        "assets/level1/nova-complete/Nova_Jump_03.png"
+      ],
+      "fps": 8,
+      "loop": false,
+      "source": "Nova_Complete_Sprite_Sheet.png",
+      "sourceRow": 3,
+      "cellSize": [
+        48,
+        64
+      ],
+      "sourceRects": [
+        [
+          0,
+          192,
+          48,
+          256
+        ],
+        [
+          48,
+          192,
+          96,
+          256
+        ],
+        [
+          96,
+          192,
+          144,
+          256
+        ],
+        [
+          144,
+          192,
+          192,
+          256
+        ]
+      ]
+    },
+    "Climb": {
+      "frames": [
+        "assets/level1/nova-complete/Nova_Climb_00.png",
+        "assets/level1/nova-complete/Nova_Climb_01.png",
+        "assets/level1/nova-complete/Nova_Climb_02.png",
+        "assets/level1/nova-complete/Nova_Climb_03.png"
+      ],
+      "fps": 7,
+      "loop": true,
+      "source": "Nova_Complete_Sprite_Sheet.png",
+      "sourceRow": 5,
+      "cellSize": [
+        48,
+        64
+      ],
+      "sourceRects": [
+        [
+          0,
+          320,
+          48,
+          384
+        ],
+        [
+          48,
+          320,
+          96,
+          384
+        ],
+        [
+          96,
+          320,
+          144,
+          384
+        ],
+        [
+          144,
+          320,
+          192,
+          384
+        ]
+      ]
+    },
+    "Pulse": {
+      "frames": [
+        "assets/level1/nova-complete/Nova_Pulse_00.png",
+        "assets/level1/nova-complete/Nova_Pulse_01.png",
+        "assets/level1/nova-complete/Nova_Pulse_02.png",
+        "assets/level1/nova-complete/Nova_Pulse_03.png"
+      ],
+      "fps": 13,
+      "loop": false,
+      "source": "Nova_Complete_Sprite_Sheet.png",
+      "sourceRow": 6,
+      "cellSize": [
+        48,
+        64
+      ],
+      "sourceRects": [
+        [
+          0,
+          384,
+          48,
+          448
+        ],
+        [
+          48,
+          384,
+          96,
+          448
+        ],
+        [
+          96,
+          384,
+          144,
+          448
+        ],
+        [
+          144,
+          384,
+          192,
+          448
+        ]
+      ]
+    },
+    "Interact": {
+      "frames": [
+        "assets/level1/nova-complete/Nova_Interact_00.png",
+        "assets/level1/nova-complete/Nova_Interact_01.png",
+        "assets/level1/nova-complete/Nova_Interact_02.png",
+        "assets/level1/nova-complete/Nova_Interact_03.png"
+      ],
+      "fps": 9,
+      "loop": false,
+      "source": "Nova_Complete_Sprite_Sheet.png",
+      "sourceRow": 9,
+      "cellSize": [
+        48,
+        64
+      ],
+      "sourceRects": [
+        [
+          0,
+          576,
+          48,
+          640
+        ],
+        [
+          48,
+          576,
+          96,
+          640
+        ],
+        [
+          96,
+          576,
+          144,
+          640
+        ],
+        [
+          144,
+          576,
+          192,
+          640
+        ]
+      ]
+    },
+    "Hurt": {
+      "frames": [
+        "assets/level1/nova-complete/Nova_Hurt_00.png",
+        "assets/level1/nova-complete/Nova_Hurt_01.png"
+      ],
+      "fps": 9,
+      "loop": false,
+      "source": "Nova_Complete_Sprite_Sheet.png",
+      "sourceRow": 7,
+      "cellSize": [
+        48,
+        64
+      ],
+      "sourceRects": [
+        [
+          0,
+          448,
+          48,
+          512
+        ],
+        [
+          48,
+          448,
+          96,
+          512
+        ]
+      ]
+    },
+    "Defeat": {
+      "frames": [
+        "assets/level1/nova-complete/Nova_Defeat_00.png",
+        "assets/level1/nova-complete/Nova_Defeat_01.png",
+        "assets/level1/nova-complete/Nova_Defeat_02.png",
+        "assets/level1/nova-complete/Nova_Defeat_03.png",
+        "assets/level1/nova-complete/Nova_Defeat_04.png",
+        "assets/level1/nova-complete/Nova_Defeat_05.png"
+      ],
+      "fps": 7,
+      "loop": false,
+      "source": "Nova_Complete_Sprite_Sheet.png",
+      "sourceRow": 8,
+      "cellSize": [
+        48,
+        64
+      ],
+      "sourceRects": [
+        [
+          0,
+          512,
+          48,
+          576
+        ],
+        [
+          48,
+          512,
+          96,
+          576
+        ],
+        [
+          96,
+          512,
+          144,
+          576
+        ],
+        [
+          144,
+          512,
+          192,
+          576
+        ],
+        [
+          192,
+          512,
+          240,
+          576
+        ],
+        [
+          240,
+          512,
+          288,
+          576
+        ]
+      ]
+    },
+    "ClimbSide": {
+      "frames": [
+        "assets/level1/nova-complete/Nova_ClimbSide_00.png",
+        "assets/level1/nova-complete/Nova_ClimbSide_01.png",
+        "assets/level1/nova-complete/Nova_ClimbSide_02.png",
+        "assets/level1/nova-complete/Nova_ClimbSide_03.png"
+      ],
+      "fps": 7,
+      "loop": true,
+      "source": "Nova_Complete_Sprite_Sheet.png",
+      "sourceRow": 4,
+      "cellSize": [
+        48,
+        64
+      ],
+      "sourceRects": [
+        [
+          0,
+          256,
+          48,
+          320
+        ],
+        [
+          48,
+          256,
+          96,
+          320
+        ],
+        [
+          96,
+          256,
+          144,
+          320
+        ],
+        [
+          144,
+          256,
+          192,
+          320
+        ]
+      ]
+    }
+  },
+  "Volt": {
+    "Hover": {
+      "frames": [
+        "assets/level1/characters/Volt_Hover_00.png",
+        "assets/level1/characters/Volt_Hover_01.png",
+        "assets/level1/characters/Volt_Hover_02.png",
+        "assets/level1/characters/Volt_Hover_03.png"
+      ],
+      "fps": 6,
+      "loop": true,
+      "source": "source-assets/Volt/Volt’s four-frame hover cycle-2.png"
+    },
+    "Speak": {
+      "frames": [
+        "assets/level1/characters/Volt_Speak_00.png",
+        "assets/level1/characters/Volt_Speak_01.png",
+        "assets/level1/characters/Volt_Speak_02.png",
+        "assets/level1/characters/Volt_Speak_03.png"
+      ],
+      "fps": 8,
+      "loop": true,
+      "source": "source-assets/Volt/Volt Robot Four-Frame Speaking Animation-3.png"
+    },
+    "Hint": {
+      "frames": [
+        "assets/level1/characters/Volt_Hint_00.png",
+        "assets/level1/characters/Volt_Hint_01.png",
+        "assets/level1/characters/Volt_Hint_02.png",
+        "assets/level1/characters/Volt_Hint_03.png"
+      ],
+      "fps": 6,
+      "loop": true,
+      "source": "source-assets/Volt/Volt Pixel Robot Hint Strip-7.png"
+    },
+    "Happy": {
+      "frames": [
+        "assets/level1/characters/Volt_Happy_00.png",
+        "assets/level1/characters/Volt_Happy_01.png",
+        "assets/level1/characters/Volt_Happy_02.png",
+        "assets/level1/characters/Volt_Happy_03.png"
+      ],
+      "fps": 7,
+      "loop": true,
+      "source": "source-assets/Volt/Happy Volt Robot Four-Frame Pixel Strip-6.png"
+    },
+    "Worried": {
+      "frames": [
+        "assets/level1/characters/Volt_Worried_00.png",
+        "assets/level1/characters/Volt_Worried_01.png"
+      ],
+      "fps": 5,
+      "loop": true,
+      "source": "source-assets/Volt/Worried Volt Robot Pixel Animation-5.png"
+    }
+  }
+}

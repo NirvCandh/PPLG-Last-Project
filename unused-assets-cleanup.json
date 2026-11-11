@@ -1,0 +1,902 @@
+{
+  "date": "2026-11-10T06:04:05.981Z",
+  "projects": {
+    "Circuit Quest - NPC Animasi.json": {
+      "before": 223,
+      "after": 132,
+      "removed": [
+        "Idle 1.png",
+        "Idle 2.png",
+        "Game Background.jpg",
+        "assets/level1/Volt.png",
+        "assets/level1/Bug.png",
+        "assets/level1/Glitch.png",
+        "assets/level1/Battery.png",
+        "assets/level1/Pulse.png",
+        "assets/level1/Ohm.png",
+        "assets/level1/Warga.png",
+        "assets/level1/Nova1.png",
+        "assets/level1/Nova2.png",
+        "assets/CircuitQuest_Level1_Props_Tileset/individual/01_thorn_idle.png",
+        "assets/CircuitQuest_Level1_Props_Tileset/individual/02_thorn_warning.png",
+        "assets/CircuitQuest_Level1_Props_Tileset/individual/03_thorn_active.png",
+        "assets/CircuitQuest_Level1_Props_Tileset/individual/04_short_circuit_off.png",
+        "assets/CircuitQuest_Level1_Props_Tileset/individual/05_short_circuit_warning.png",
+        "assets/CircuitQuest_Level1_Props_Tileset/individual/06_short_circuit_active.png",
+        "assets/CircuitQuest_Level1_Props_Tileset/individual/15_component_chest_closed.png",
+        "assets/CircuitQuest_Level1_Props_Tileset/individual/16_component_chest_open.png",
+        "assets/CircuitQuest_Level1_Props_Tileset/individual/17_research_terminal_off.png",
+        "assets/CircuitQuest_Level1_Props_Tileset/individual/18_research_terminal_on.png",
+        "assets/CircuitQuest_Level1_Props_Tileset/individual/19_assembly_workbench_off.png",
+        "assets/CircuitQuest_Level1_Props_Tileset/individual/20_assembly_workbench_on.png",
+        "assets/CircuitQuest_Level1_Props_Tileset/individual/11_environmental_sensor_post.png",
+        "assets/CircuitQuest_Level1_Props_Tileset/individual/26_hanging_leaves.png",
+        "assets/CircuitQuest_Level1_Props_Tileset/individual/29_fern.png",
+        "assets/CircuitQuest_Level1_Props_Tileset/individual/27_bush_large.png",
+        "assets/CircuitQuest_Level1_Props_Tileset/individual/23_glow_mushrooms.png",
+        "assets/CircuitQuest_Level1_Props_Tileset/individual/21_cyan_crystal_cluster.png",
+        "assets/CircuitQuest_Level1_Props_Tileset/individual/08_ladder_middle.png",
+        "assets/CircuitQuest_Level1_Hutan_Sensor_All_Assets/CircuitQuest_Level1/Props/Sensor_Item_DHT22.png",
+        "assets/CircuitQuest_Level1_Hutan_Sensor_All_Assets/CircuitQuest_Level1/Props/Sensor_Item_LDR.png",
+        "assets/CircuitQuest_Level1_Hutan_Sensor_All_Assets/CircuitQuest_Level1/Props/Sensor_Item_Soil_Moisture.png",
+        "assets/CircuitQuest_Level1_Hutan_Sensor_All_Assets/CircuitQuest_Level1/Props/Sensor_Item_PIR.png",
+        "source-assets/Pixel Forest Tech Village Panorama.png",
+        "source-assets/Pixel Forest IoT Village-4.png",
+        "source-assets/Pixel-Art Forest Village Panorama-2.png",
+        "source-assets/Enchanted Forest IoT Village-3.png",
+        "assets/CircuitQuest_Level1_Hutan_Sensor_All_Assets/CircuitQuest_Level1/Backgrounds/04_Cave_Wall_1536x384.png",
+        "assets/level1/characters/Nova_Idle_00.png",
+        "assets/level1/characters/Nova_Idle_01.png",
+        "assets/level1/characters/Nova_Idle_02.png",
+        "assets/level1/characters/Nova_Idle_03.png",
+        "assets/level1/characters/Nova_Run_00.png",
+        "assets/level1/characters/Nova_Run_01.png",
+        "assets/level1/characters/Nova_Run_02.png",
+        "assets/level1/characters/Nova_Run_03.png",
+        "assets/level1/characters/Nova_Run_04.png",
+        "assets/level1/characters/Nova_Run_05.png",
+        "assets/level1/characters/Nova_Jump_00.png",
+        "assets/level1/characters/Nova_Jump_01.png",
+        "assets/level1/characters/Nova_Jump_02.png",
+        "assets/level1/characters/Nova_Jump_03.png",
+        "assets/level1/characters/Nova_Climb_00.png",
+        "assets/level1/characters/Nova_Climb_01.png",
+        "assets/level1/characters/Nova_Climb_02.png",
+        "assets/level1/characters/Nova_Climb_03.png",
+        "assets/level1/characters/Nova_Pulse_00.png",
+        "assets/level1/characters/Nova_Pulse_01.png",
+        "assets/level1/characters/Nova_Pulse_02.png",
+        "assets/level1/characters/Nova_Pulse_03.png",
+        "assets/level1/characters/Nova_Interact_00.png",
+        "assets/level1/characters/Nova_Interact_01.png",
+        "assets/level1/characters/Nova_Interact_02.png",
+        "assets/level1/characters/Nova_Interact_03.png",
+        "assets/level1/characters/Nova_Hurt_00.png",
+        "assets/level1/characters/Nova_Hurt_01.png",
+        "assets/level1/characters/Nova_Defeat_00.png",
+        "assets/level1/characters/Nova_Defeat_01.png",
+        "assets/level1/characters/Nova_Defeat_02.png",
+        "assets/level1/characters/Nova_Defeat_03.png",
+        "assets/level1/characters/Nova_Defeat_04.png",
+        "assets/level1/characters/Nova_Defeat_05.png",
+        "assets/level1/characters/Nova_ClimbSide_00.png",
+        "assets/level1/characters/Nova_ClimbSide_01.png",
+        "assets/level1/characters/Nova_ClimbSide_02.png",
+        "assets/level1/characters/Nova_ClimbSide_03.png",
+        "assets/level1/Terrain_Cave_2784_800.png",
+        "assets/level1/Terrain_Cave_2976_960.png",
+        "assets/level1/Prop_Chest_0.png",
+        "assets/level1/Prop_Chest_1.png",
+        "assets/level1/Prop_Terminal_0.png",
+        "assets/level1/Prop_Terminal_1.png",
+        "assets/level1/Prop_Workbench_0.png",
+        "assets/level1/Prop_Workbench_1.png",
+        "assets/level1/Prop_SensorPost_0.png",
+        "assets/art2d/Ohm.png",
+        "assets/art2d/Warga.png",
+        "assets/art2d/Heart.png",
+        "assets/art2d/Jumper.png"
+      ],
+      "backup": "Circuit Quest - NPC Animasi.before-unused-assets.json"
+    },
+    "Project TA PPLG.json": {
+      "before": 223,
+      "after": 132,
+      "removed": [
+        "Idle 1.png",
+        "Idle 2.png",
+        "Game Background.jpg",
+        "assets/level1/Volt.png",
+        "assets/level1/Bug.png",
+        "assets/level1/Glitch.png",
+        "assets/level1/Battery.png",
+        "assets/level1/Pulse.png",
+        "assets/level1/Ohm.png",
+        "assets/level1/Warga.png",
+        "assets/level1/Nova1.png",
+        "assets/level1/Nova2.png",
+        "assets/CircuitQuest_Level1_Props_Tileset/individual/01_thorn_idle.png",
+        "assets/CircuitQuest_Level1_Props_Tileset/individual/02_thorn_warning.png",
+        "assets/CircuitQuest_Level1_Props_Tileset/individual/03_thorn_active.png",
+        "assets/CircuitQuest_Level1_Props_Tileset/individual/04_short_circuit_off.png",
+        "assets/CircuitQuest_Level1_Props_Tileset/individual/05_short_circuit_warning.png",
+        "assets/CircuitQuest_Level1_Props_Tileset/individual/06_short_circuit_active.png",
+        "assets/CircuitQuest_Level1_Props_Tileset/individual/15_component_chest_closed.png",
+        "assets/CircuitQuest_Level1_Props_Tileset/individual/16_component_chest_open.png",
+        "assets/CircuitQuest_Level1_Props_Tileset/individual/17_research_terminal_off.png",
+        "assets/CircuitQuest_Level1_Props_Tileset/individual/18_research_terminal_on.png",
+        "assets/CircuitQuest_Level1_Props_Tileset/individual/19_assembly_workbench_off.png",
+        "assets/CircuitQuest_Level1_Props_Tileset/individual/20_assembly_workbench_on.png",
+        "assets/CircuitQuest_Level1_Props_Tileset/individual/11_environmental_sensor_post.png",
+        "assets/CircuitQuest_Level1_Props_Tileset/individual/26_hanging_leaves.png",
+        "assets/CircuitQuest_Level1_Props_Tileset/individual/29_fern.png",
+        "assets/CircuitQuest_Level1_Props_Tileset/individual/27_bush_large.png",
+        "assets/CircuitQuest_Level1_Props_Tileset/individual/23_glow_mushrooms.png",
+        "assets/CircuitQuest_Level1_Props_Tileset/individual/21_cyan_crystal_cluster.png",
+        "assets/CircuitQuest_Level1_Props_Tileset/individual/08_ladder_middle.png",
+        "assets/CircuitQuest_Level1_Hutan_Sensor_All_Assets/CircuitQuest_Level1/Props/Sensor_Item_DHT22.png",
+        "assets/CircuitQuest_Level1_Hutan_Sensor_All_Assets/CircuitQuest_Level1/Props/Sensor_Item_LDR.png",
+        "assets/CircuitQuest_Level1_Hutan_Sensor_All_Assets/CircuitQuest_Level1/Props/Sensor_Item_Soil_Moisture.png",
+        "assets/CircuitQuest_Level1_Hutan_Sensor_All_Assets/CircuitQuest_Level1/Props/Sensor_Item_PIR.png",
+        "source-assets/Pixel Forest Tech Village Panorama.png",
+        "source-assets/Pixel Forest IoT Village-4.png",
+        "source-assets/Pixel-Art Forest Village Panorama-2.png",
+        "source-assets/Enchanted Forest IoT Village-3.png",
+        "assets/CircuitQuest_Level1_Hutan_Sensor_All_Assets/CircuitQuest_Level1/Backgrounds/04_Cave_Wall_1536x384.png",
+        "assets/level1/characters/Nova_Idle_00.png",
+        "assets/level1/characters/Nova_Idle_01.png",
+        "assets/level1/characters/Nova_Idle_02.png",
+        "assets/level1/characters/Nova_Idle_03.png",
+        "assets/level1/characters/Nova_Run_00.png",
+        "assets/level1/characters/Nova_Run_01.png",
+        "assets/level1/characters/Nova_Run_02.png",
+        "assets/level1/characters/Nova_Run_03.png",
+        "assets/level1/characters/Nova_Run_04.png",
+        "assets/level1/characters/Nova_Run_05.png",
+        "assets/level1/characters/Nova_Jump_00.png",
+        "assets/level1/characters/Nova_Jump_01.png",
+        "assets/level1/characters/Nova_Jump_02.png",
+        "assets/level1/characters/Nova_Jump_03.png",
+        "assets/level1/characters/Nova_Climb_00.png",
+        "assets/level1/characters/Nova_Climb_01.png",
+        "assets/level1/characters/Nova_Climb_02.png",
+        "assets/level1/characters/Nova_Climb_03.png",
+        "assets/level1/characters/Nova_Pulse_00.png",
+        "assets/level1/characters/Nova_Pulse_01.png",
+        "assets/level1/characters/Nova_Pulse_02.png",
+        "assets/level1/characters/Nova_Pulse_03.png",
+        "assets/level1/characters/Nova_Interact_00.png",
+        "assets/level1/characters/Nova_Interact_01.png",
+        "assets/level1/characters/Nova_Interact_02.png",
+        "assets/level1/characters/Nova_Interact_03.png",
+        "assets/level1/characters/Nova_Hurt_00.png",
+        "assets/level1/characters/Nova_Hurt_01.png",
+        "assets/level1/characters/Nova_Defeat_00.png",
+        "assets/level1/characters/Nova_Defeat_01.png",
+        "assets/level1/characters/Nova_Defeat_02.png",
+        "assets/level1/characters/Nova_Defeat_03.png",
+        "assets/level1/characters/Nova_Defeat_04.png",
+        "assets/level1/characters/Nova_Defeat_05.png",
+        "assets/level1/characters/Nova_ClimbSide_00.png",
+        "assets/level1/characters/Nova_ClimbSide_01.png",
+        "assets/level1/characters/Nova_ClimbSide_02.png",
+        "assets/level1/characters/Nova_ClimbSide_03.png",
+        "assets/level1/Terrain_Cave_2784_800.png",
+        "assets/level1/Terrain_Cave_2976_960.png",
+        "assets/level1/Prop_Chest_0.png",
+        "assets/level1/Prop_Chest_1.png",
+        "assets/level1/Prop_Terminal_0.png",
+        "assets/level1/Prop_Terminal_1.png",
+        "assets/level1/Prop_Workbench_0.png",
+        "assets/level1/Prop_Workbench_1.png",
+        "assets/level1/Prop_SensorPost_0.png",
+        "assets/art2d/Ohm.png",
+        "assets/art2d/Warga.png",
+        "assets/art2d/Heart.png",
+        "assets/art2d/Jumper.png"
+      ],
+      "backup": "Project TA PPLG.before-unused-assets.json"
+    }
+  },
+  "deletedFiles": [
+    {
+      "file": "assets/CircuitQuest_Level1_Cave_Tileset/Cave_Secondary_256x128.png",
+      "bytes": 62254
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Cave_Tileset/tiles_32x32/01_cave_floor_left_corner.png",
+      "bytes": 2614
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Cave_Tileset/tiles_32x32/02_cave_floor_middle.png",
+      "bytes": 2582
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Cave_Tileset/tiles_32x32/03_cave_floor_right_corner.png",
+      "bytes": 2596
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Cave_Tileset/tiles_32x32/04_left_rock_wall.png",
+      "bytes": 2508
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Cave_Tileset/tiles_32x32/05_rock_fill_a.png",
+      "bytes": 2158
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Cave_Tileset/tiles_32x32/06_rock_fill_b.png",
+      "bytes": 2113
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Cave_Tileset/tiles_32x32/07_right_rock_wall.png",
+      "bytes": 2212
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Cave_Tileset/tiles_32x32/08_blank_1.png",
+      "bytes": 83
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Cave_Tileset/tiles_32x32/09_cave_ceiling_left_corner.png",
+      "bytes": 2163
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Cave_Tileset/tiles_32x32/10_cave_ceiling_middle.png",
+      "bytes": 2278
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Cave_Tileset/tiles_32x32/11_cave_ceiling_right_corner.png",
+      "bytes": 2276
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Cave_Tileset/tiles_32x32/12_inner_top_left.png",
+      "bytes": 2452
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Cave_Tileset/tiles_32x32/13_inner_top_right.png",
+      "bytes": 2384
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Cave_Tileset/tiles_32x32/14_inner_bottom_left.png",
+      "bytes": 2668
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Cave_Tileset/tiles_32x32/15_inner_bottom_right.png",
+      "bytes": 2248
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Cave_Tileset/tiles_32x32/16_blank_2.png",
+      "bytes": 83
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Cave_Tileset/tiles_32x32/17_stone_ledge_left_cap.png",
+      "bytes": 2510
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Cave_Tileset/tiles_32x32/18_stone_ledge_middle.png",
+      "bytes": 2498
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Cave_Tileset/tiles_32x32/19_stone_ledge_right_cap.png",
+      "bytes": 2572
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Cave_Tileset/tiles_32x32/20_stone_ledge_single.png",
+      "bytes": 2029
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Cave_Tileset/tiles_32x32/21_lab_floor_left_cap.png",
+      "bytes": 2088
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Cave_Tileset/tiles_32x32/22_lab_floor_middle.png",
+      "bytes": 2184
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Cave_Tileset/tiles_32x32/23_lab_floor_right_cap.png",
+      "bytes": 2196
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Cave_Tileset/tiles_32x32/24_lab_floor_single.png",
+      "bytes": 1844
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Cave_Tileset/tiles_32x32/25_cave_entrance_left_jamb.png",
+      "bytes": 2608
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Cave_Tileset/tiles_32x32/26_cave_entrance_top_lintel.png",
+      "bytes": 1483
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Cave_Tileset/tiles_32x32/27_cave_entrance_right_jamb.png",
+      "bytes": 2610
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Cave_Tileset/tiles_32x32/28_cave_entrance_threshold.png",
+      "bytes": 805
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Cave_Tileset/tiles_32x32/29_lab_doorway_left_jamb.png",
+      "bytes": 1939
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Cave_Tileset/tiles_32x32/30_lab_doorway_top_lintel.png",
+      "bytes": 2037
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Cave_Tileset/tiles_32x32/31_lab_doorway_right_jamb.png",
+      "bytes": 2221
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Cave_Tileset/tiles_32x32/32_lab_doorway_threshold.png",
+      "bytes": 748
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Cave_Tileset/tiles_original/01_cave_floor_left_corner.png",
+      "bytes": 60579
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Cave_Tileset/tiles_original/02_cave_floor_middle.png",
+      "bytes": 60771
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Cave_Tileset/tiles_original/03_cave_floor_right_corner.png",
+      "bytes": 60916
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Cave_Tileset/tiles_original/04_left_rock_wall.png",
+      "bytes": 59181
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Cave_Tileset/tiles_original/05_rock_fill_a.png",
+      "bytes": 52848
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Cave_Tileset/tiles_original/06_rock_fill_b.png",
+      "bytes": 52319
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Cave_Tileset/tiles_original/07_right_rock_wall.png",
+      "bytes": 53120
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Cave_Tileset/tiles_original/08_blank_1.png",
+      "bytes": 259
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Cave_Tileset/tiles_original/09_cave_ceiling_left_corner.png",
+      "bytes": 48380
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Cave_Tileset/tiles_original/10_cave_ceiling_middle.png",
+      "bytes": 50648
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Cave_Tileset/tiles_original/11_cave_ceiling_right_corner.png",
+      "bytes": 50543
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Cave_Tileset/tiles_original/12_inner_top_left.png",
+      "bytes": 57143
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Cave_Tileset/tiles_original/13_inner_top_right.png",
+      "bytes": 57591
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Cave_Tileset/tiles_original/14_inner_bottom_left.png",
+      "bytes": 65059
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Cave_Tileset/tiles_original/15_inner_bottom_right.png",
+      "bytes": 54831
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Cave_Tileset/tiles_original/16_blank_2.png",
+      "bytes": 259
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Cave_Tileset/tiles_original/17_stone_ledge_left_cap.png",
+      "bytes": 58156
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Cave_Tileset/tiles_original/18_stone_ledge_middle.png",
+      "bytes": 59832
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Cave_Tileset/tiles_original/19_stone_ledge_right_cap.png",
+      "bytes": 59505
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Cave_Tileset/tiles_original/20_stone_ledge_single.png",
+      "bytes": 46956
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Cave_Tileset/tiles_original/21_lab_floor_left_cap.png",
+      "bytes": 48726
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Cave_Tileset/tiles_original/22_lab_floor_middle.png",
+      "bytes": 54725
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Cave_Tileset/tiles_original/23_lab_floor_right_cap.png",
+      "bytes": 52315
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Cave_Tileset/tiles_original/24_lab_floor_single.png",
+      "bytes": 44222
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Cave_Tileset/tiles_original/25_cave_entrance_left_jamb.png",
+      "bytes": 61699
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Cave_Tileset/tiles_original/26_cave_entrance_top_lintel.png",
+      "bytes": 34831
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Cave_Tileset/tiles_original/27_cave_entrance_right_jamb.png",
+      "bytes": 61306
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Cave_Tileset/tiles_original/28_cave_entrance_threshold.png",
+      "bytes": 17163
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Cave_Tileset/tiles_original/29_lab_doorway_left_jamb.png",
+      "bytes": 44987
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Cave_Tileset/tiles_original/30_lab_doorway_top_lintel.png",
+      "bytes": 47257
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Cave_Tileset/tiles_original/31_lab_doorway_right_jamb.png",
+      "bytes": 52957
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Cave_Tileset/tiles_original/32_lab_doorway_threshold.png",
+      "bytes": 14710
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Hutan_Sensor_All_Assets/CircuitQuest_Level1/Backgrounds/01_Distant_Canopy_1536x384.png",
+      "bytes": 8848
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Hutan_Sensor_All_Assets/CircuitQuest_Level1/Backgrounds/02_Middle_Trunks_Village_1536x384.png",
+      "bytes": 8873
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Hutan_Sensor_All_Assets/CircuitQuest_Level1/Backgrounds/03_Near_Foliage_1536x384.png",
+      "bytes": 9035
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Hutan_Sensor_All_Assets/CircuitQuest_Level1/Layout/Level1_Layout_Reference_1920x600.png",
+      "bytes": 45760
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Hutan_Sensor_All_Assets/CircuitQuest_Level1/Props/Assembly_Workbench_frames.png",
+      "bytes": 347
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Hutan_Sensor_All_Assets/CircuitQuest_Level1/Props/Assembly_Workbench_off.png",
+      "bytes": 225
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Hutan_Sensor_All_Assets/CircuitQuest_Level1/Props/Assembly_Workbench_on.png",
+      "bytes": 284
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Hutan_Sensor_All_Assets/CircuitQuest_Level1/Props/Cable_Conduit_corner.png",
+      "bytes": 150
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Hutan_Sensor_All_Assets/CircuitQuest_Level1/Props/Cable_Conduit_end.png",
+      "bytes": 169
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Hutan_Sensor_All_Assets/CircuitQuest_Level1/Props/Cable_Conduit_frames.png",
+      "bytes": 271
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Hutan_Sensor_All_Assets/CircuitQuest_Level1/Props/Cable_Conduit_straight.png",
+      "bytes": 123
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Hutan_Sensor_All_Assets/CircuitQuest_Level1/Props/Component_Chest_closed.png",
+      "bytes": 212
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Hutan_Sensor_All_Assets/CircuitQuest_Level1/Props/Component_Chest_frames.png",
+      "bytes": 332
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Hutan_Sensor_All_Assets/CircuitQuest_Level1/Props/Component_Chest_open.png",
+      "bytes": 245
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Hutan_Sensor_All_Assets/CircuitQuest_Level1/Props/Environmental_Sensor_Post_idle.png",
+      "bytes": 233
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Hutan_Sensor_All_Assets/CircuitQuest_Level1/Props/Ladder_bottom.png",
+      "bytes": 166
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Hutan_Sensor_All_Assets/CircuitQuest_Level1/Props/Ladder_frames.png",
+      "bytes": 283
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Hutan_Sensor_All_Assets/CircuitQuest_Level1/Props/Ladder_middle.png",
+      "bytes": 166
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Hutan_Sensor_All_Assets/CircuitQuest_Level1/Props/Ladder_top.png",
+      "bytes": 179
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Hutan_Sensor_All_Assets/CircuitQuest_Level1/Props/Research_Terminal_frames.png",
+      "bytes": 298
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Hutan_Sensor_All_Assets/CircuitQuest_Level1/Props/Research_Terminal_off.png",
+      "bytes": 192
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Hutan_Sensor_All_Assets/CircuitQuest_Level1/Props/Research_Terminal_on.png",
+      "bytes": 235
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Hutan_Sensor_All_Assets/CircuitQuest_Level1/Props/Sensor_Item_frames.png",
+      "bytes": 592
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Hutan_Sensor_All_Assets/CircuitQuest_Level1/Props/Short_Circuit_active.png",
+      "bytes": 245
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Hutan_Sensor_All_Assets/CircuitQuest_Level1/Props/Short_Circuit_frames.png",
+      "bytes": 388
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Hutan_Sensor_All_Assets/CircuitQuest_Level1/Props/Short_Circuit_off.png",
+      "bytes": 135
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Hutan_Sensor_All_Assets/CircuitQuest_Level1/Props/Short_Circuit_warning.png",
+      "bytes": 239
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Hutan_Sensor_All_Assets/CircuitQuest_Level1/Props/Thorn_Bush_active.png",
+      "bytes": 417
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Hutan_Sensor_All_Assets/CircuitQuest_Level1/Props/Thorn_Bush_frames.png",
+      "bytes": 681
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Hutan_Sensor_All_Assets/CircuitQuest_Level1/Props/Thorn_Bush_idle.png",
+      "bytes": 315
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Hutan_Sensor_All_Assets/CircuitQuest_Level1/Props/Thorn_Bush_warning.png",
+      "bytes": 323
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Hutan_Sensor_All_Assets/CircuitQuest_Level1/Props/Trail_Sign_blank.png",
+      "bytes": 168
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Hutan_Sensor_All_Assets/CircuitQuest_Level1/Terrain/Forest_Surface_8x4_32px.png",
+      "bytes": 3813
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Hutan_Sensor_All_Assets/CircuitQuest_Level1/Terrain/Underground_Cave_Lab_8x4_32px.png",
+      "bytes": 2628
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Props_Tileset/individual/07_ladder_top.png",
+      "bytes": 2423
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Props_Tileset/individual/09_ladder_bottom.png",
+      "bytes": 2381
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Props_Tileset/individual/10_trail_sign_blank.png",
+      "bytes": 2524
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Props_Tileset/individual/12_cable_straight.png",
+      "bytes": 2254
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Props_Tileset/individual/13_cable_corner.png",
+      "bytes": 2315
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Props_Tileset/individual/14_cable_end.png",
+      "bytes": 2078
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Props_Tileset/individual/22_moss_rocks.png",
+      "bytes": 2541
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Props_Tileset/individual/24_cave_stalactite_decoration.png",
+      "bytes": 2512
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Props_Tileset/individual/25_hanging_vine.png",
+      "bytes": 2197
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Props_Tileset/individual/28_bush_small.png",
+      "bytes": 2214
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Props_Tileset/individual/30_blue_flowers.png",
+      "bytes": 2285
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Props_Tileset/individual/31_sprout.png",
+      "bytes": 2383
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Props_Tileset/individual/32_cyan_crystal_large.png",
+      "bytes": 2545
+    },
+    {
+      "file": "assets/CircuitQuest_Level1_Props_Tileset/Props_Atlas_256x128.png",
+      "bytes": 34906
+    },
+    {
+      "file": "assets/level1/Battery.png",
+      "bytes": 197
+    },
+    {
+      "file": "assets/level1/Bug.png",
+      "bytes": 229
+    },
+    {
+      "file": "assets/level1/CaveBridge.png",
+      "bytes": 55967
+    },
+    {
+      "file": "assets/level1/CaveTopLeft.png",
+      "bytes": 7512
+    },
+    {
+      "file": "assets/level1/CaveTopRight.png",
+      "bytes": 7512
+    },
+    {
+      "file": "assets/level1/characters/Nova_ClimbSide_00.png",
+      "bytes": 8296
+    },
+    {
+      "file": "assets/level1/characters/Nova_ClimbSide_01.png",
+      "bytes": 8252
+    },
+    {
+      "file": "assets/level1/characters/Nova_ClimbSide_02.png",
+      "bytes": 8392
+    },
+    {
+      "file": "assets/level1/characters/Nova_ClimbSide_03.png",
+      "bytes": 8155
+    },
+    {
+      "file": "assets/level1/characters/Nova_Climb_00.png",
+      "bytes": 7613
+    },
+    {
+      "file": "assets/level1/characters/Nova_Climb_01.png",
+      "bytes": 7780
+    },
+    {
+      "file": "assets/level1/characters/Nova_Climb_02.png",
+      "bytes": 7739
+    },
+    {
+      "file": "assets/level1/characters/Nova_Climb_03.png",
+      "bytes": 7878
+    },
+    {
+      "file": "assets/level1/characters/Nova_Defeat_00.png",
+      "bytes": 6706
+    },
+    {
+      "file": "assets/level1/characters/Nova_Defeat_01.png",
+      "bytes": 6801
+    },
+    {
+      "file": "assets/level1/characters/Nova_Defeat_02.png",
+      "bytes": 6686
+    },
+    {
+      "file": "assets/level1/characters/Nova_Defeat_03.png",
+      "bytes": 6189
+    },
+    {
+      "file": "assets/level1/characters/Nova_Defeat_04.png",
+      "bytes": 5573
+    },
+    {
+      "file": "assets/level1/characters/Nova_Defeat_05.png",
+      "bytes": 5383
+    },
+    {
+      "file": "assets/level1/characters/Nova_Hurt_00.png",
+      "bytes": 8010
+    },
+    {
+      "file": "assets/level1/characters/Nova_Hurt_01.png",
+      "bytes": 7633
+    },
+    {
+      "file": "assets/level1/characters/NOVA_Idle_00.png",
+      "bytes": 6974
+    },
+    {
+      "file": "assets/level1/characters/NOVA_Idle_01.png",
+      "bytes": 7015
+    },
+    {
+      "file": "assets/level1/characters/NOVA_Idle_02.png",
+      "bytes": 6922
+    },
+    {
+      "file": "assets/level1/characters/NOVA_Idle_03.png",
+      "bytes": 6919
+    },
+    {
+      "file": "assets/level1/characters/Nova_Interact_00.png",
+      "bytes": 6896
+    },
+    {
+      "file": "assets/level1/characters/Nova_Interact_01.png",
+      "bytes": 7143
+    },
+    {
+      "file": "assets/level1/characters/Nova_Interact_02.png",
+      "bytes": 7261
+    },
+    {
+      "file": "assets/level1/characters/Nova_Interact_03.png",
+      "bytes": 6944
+    },
+    {
+      "file": "assets/level1/characters/Nova_Jump_00.png",
+      "bytes": 7799
+    },
+    {
+      "file": "assets/level1/characters/Nova_Jump_01.png",
+      "bytes": 7170
+    },
+    {
+      "file": "assets/level1/characters/Nova_Jump_02.png",
+      "bytes": 7215
+    },
+    {
+      "file": "assets/level1/characters/Nova_Jump_03.png",
+      "bytes": 7395
+    },
+    {
+      "file": "assets/level1/characters/Nova_Pulse_00.png",
+      "bytes": 6978
+    },
+    {
+      "file": "assets/level1/characters/Nova_Pulse_01.png",
+      "bytes": 7430
+    },
+    {
+      "file": "assets/level1/characters/Nova_Pulse_02.png",
+      "bytes": 7156
+    },
+    {
+      "file": "assets/level1/characters/Nova_Pulse_03.png",
+      "bytes": 7038
+    },
+    {
+      "file": "assets/level1/characters/Nova_Run_00.png",
+      "bytes": 6591
+    },
+    {
+      "file": "assets/level1/characters/Nova_Run_01.png",
+      "bytes": 5981
+    },
+    {
+      "file": "assets/level1/characters/Nova_Run_02.png",
+      "bytes": 6077
+    },
+    {
+      "file": "assets/level1/characters/Nova_Run_03.png",
+      "bytes": 6499
+    },
+    {
+      "file": "assets/level1/characters/Nova_Run_04.png",
+      "bytes": 6103
+    },
+    {
+      "file": "assets/level1/characters/Nova_Run_05.png",
+      "bytes": 6134
+    },
+    {
+      "file": "assets/level1/ForestLab.png",
+      "bytes": 43789
+    },
+    {
+      "file": "assets/level1/Glitch.png",
+      "bytes": 229
+    },
+    {
+      "file": "assets/level1/Nova1.png",
+      "bytes": 31141
+    },
+    {
+      "file": "assets/level1/Nova2.png",
+      "bytes": 31372
+    },
+    {
+      "file": "assets/level1/Ohm.png",
+      "bytes": 200
+    },
+    {
+      "file": "assets/level1/Prop_Chest_0.png",
+      "bytes": 1570
+    },
+    {
+      "file": "assets/level1/Prop_Chest_1.png",
+      "bytes": 1707
+    },
+    {
+      "file": "assets/level1/Prop_SensorPost_0.png",
+      "bytes": 1591
+    },
+    {
+      "file": "assets/level1/Prop_Terminal_0.png",
+      "bytes": 1317
+    },
+    {
+      "file": "assets/level1/Prop_Terminal_1.png",
+      "bytes": 1436
+    },
+    {
+      "file": "assets/level1/Prop_Workbench_0.png",
+      "bytes": 2024
+    },
+    {
+      "file": "assets/level1/Prop_Workbench_1.png",
+      "bytes": 2030
+    },
+    {
+      "file": "assets/level1/Pulse.png",
+      "bytes": 185
+    },
+    {
+      "file": "assets/level1/Terrain_Cave_2784_800.png",
+      "bytes": 16948
+    },
+    {
+      "file": "assets/level1/Terrain_Cave_2976_960.png",
+      "bytes": 16948
+    },
+    {
+      "file": "assets/level1/Volt.png",
+      "bytes": 200
+    },
+    {
+      "file": "assets/level1/Warga.png",
+      "bytes": 209
+    },
+    {
+      "file": "Game Background.jpg",
+      "bytes": 2528703
+    }
+  ],
+  "preserved": "Original source-assets, sprite sheets, build inputs, scripts, review images, and historical project snapshots are retained.",
+  "deletedCount": 174,
+  "bytesFreed": 4845708
+}

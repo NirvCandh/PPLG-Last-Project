@@ -1,0 +1,160 @@
+{
+  "Nova": {
+    "Idle": {
+      "frames": [
+        "assets/level1/characters/Nova_Idle_00.png",
+        "assets/level1/characters/Nova_Idle_01.png",
+        "assets/level1/characters/Nova_Idle_02.png",
+        "assets/level1/characters/Nova_Idle_03.png"
+      ],
+      "fps": 5,
+      "loop": true,
+      "source": "source-assets/Nova/IDLE/Nova technician idle animation strip.png"
+    },
+    "Run": {
+      "frames": [
+        "assets/level1/characters/Nova_Run_00.png",
+        "assets/level1/characters/Nova_Run_01.png",
+        "assets/level1/characters/Nova_Run_02.png",
+        "assets/level1/characters/Nova_Run_03.png",
+        "assets/level1/characters/Nova_Run_04.png",
+        "assets/level1/characters/Nova_Run_05.png"
+      ],
+      "fps": 11,
+      "loop": true,
+      "source": "source-assets/Nova/RUN/Nova\u2019s six-frame pulse run.png"
+    },
+    "Jump": {
+      "frames": [
+        "assets/level1/characters/Nova_Jump_00.png",
+        "assets/level1/characters/Nova_Jump_01.png",
+        "assets/level1/characters/Nova_Jump_02.png",
+        "assets/level1/characters/Nova_Jump_03.png"
+      ],
+      "fps": 8,
+      "loop": false,
+      "source": "source-assets/Nova/Nova Jump and Fall Animation Strip.png"
+    },
+    "Climb": {
+      "frames": [
+        "assets/level1/characters/Nova_Climb_00.png",
+        "assets/level1/characters/Nova_Climb_01.png",
+        "assets/level1/characters/Nova_Climb_02.png",
+        "assets/level1/characters/Nova_Climb_03.png"
+      ],
+      "fps": 7,
+      "loop": true,
+      "source": "source-assets/Nova/Nova\u2019s rear-view climbing sprite strip.png"
+    },
+    "Pulse": {
+      "frames": [
+        "assets/level1/characters/Nova_Pulse_00.png",
+        "assets/level1/characters/Nova_Pulse_01.png",
+        "assets/level1/characters/Nova_Pulse_02.png",
+        "assets/level1/characters/Nova_Pulse_03.png"
+      ],
+      "fps": 13,
+      "loop": false,
+      "source": "source-assets/Nova/Nova\u2019s Pulse Wave Sprite Strip.png"
+    },
+    "Interact": {
+      "frames": [
+        "assets/level1/characters/Nova_Interact_00.png",
+        "assets/level1/characters/Nova_Interact_01.png",
+        "assets/level1/characters/Nova_Interact_02.png",
+        "assets/level1/characters/Nova_Interact_03.png"
+      ],
+      "fps": 9,
+      "loop": false,
+      "source": "source-assets/Nova/Four-frame technician interaction sequence.png"
+    },
+    "Hurt": {
+      "frames": [
+        "assets/level1/characters/Nova_Hurt_00.png",
+        "assets/level1/characters/Nova_Hurt_01.png"
+      ],
+      "fps": 9,
+      "loop": false,
+      "source": "source-assets/Nova/Nova\u2019s two-frame hurt animation.png"
+    },
+    "Defeat": {
+      "frames": [
+        "assets/level1/characters/Nova_Defeat_00.png",
+        "assets/level1/characters/Nova_Defeat_01.png",
+        "assets/level1/characters/Nova_Defeat_02.png",
+        "assets/level1/characters/Nova_Defeat_03.png",
+        "assets/level1/characters/Nova_Defeat_04.png",
+        "assets/level1/characters/Nova_Defeat_05.png"
+      ],
+      "fps": 7,
+      "loop": false,
+      "source": "source-assets/Nova/Nova\u2019s Six-Frame Seated Defeat.png"
+    },
+    "ClimbSide": {
+      "frames": [
+        "assets/level1/characters/Nova_ClimbSide_00.png",
+        "assets/level1/characters/Nova_ClimbSide_01.png",
+        "assets/level1/characters/Nova_ClimbSide_02.png",
+        "assets/level1/characters/Nova_ClimbSide_03.png"
+      ],
+      "fps": 7,
+      "loop": true,
+      "source": "source-assets/Nova/Nova\u2019s Four-Frame Ladder Climb.png"
+    }
+  },
+  "Volt": {
+    "Hover": {
+      "frames": [
+        "assets/level1/characters/Volt_Hover_00.png",
+        "assets/level1/characters/Volt_Hover_01.png",
+        "assets/level1/characters/Volt_Hover_02.png",
+        "assets/level1/characters/Volt_Hover_03.png"
+      ],
+      "fps": 6,
+      "loop": true,
+      "source": "source-assets/Volt/Volt\u2019s four-frame hover cycle-2.png"
+    },
+    "Speak": {
+      "frames": [
+        "assets/level1/characters/Volt_Speak_00.png",
+        "assets/level1/characters/Volt_Speak_01.png",
+        "assets/level1/characters/Volt_Speak_02.png",
+        "assets/level1/characters/Volt_Speak_03.png"
+      ],
+      "fps": 8,
+      "loop": true,
+      "source": "source-assets/Volt/Volt Robot Four-Frame Speaking Animation-3.png"
+    },
+    "Hint": {
+      "frames": [
+        "assets/level1/characters/Volt_Hint_00.png",
+        "assets/level1/characters/Volt_Hint_01.png",
+        "assets/level1/characters/Volt_Hint_02.png",
+        "assets/level1/characters/Volt_Hint_03.png"
+      ],
+      "fps": 6,
+      "loop": true,
+      "source": "source-assets/Volt/Volt Pixel Robot Hint Strip-7.png"
+    },
+    "Happy": {
+      "frames": [
+        "assets/level1/characters/Volt_Happy_00.png",
+        "assets/level1/characters/Volt_Happy_01.png",
+        "assets/level1/characters/Volt_Happy_02.png",
+        "assets/level1/characters/Volt_Happy_03.png"
+      ],
+      "fps": 7,
+      "loop": true,
+      "source": "source-assets/Volt/Happy Volt Robot Four-Frame Pixel Strip-6.png"
+    },
+    "Worried": {
+      "frames": [
+        "assets/level1/characters/Volt_Worried_00.png",
+        "assets/level1/characters/Volt_Worried_01.png"
+      ],
+      "fps": 5,
+      "loop": true,
+      "source": "source-assets/Volt/Worried Volt Robot Pixel Animation-5.png"
+    }
+  }
+}

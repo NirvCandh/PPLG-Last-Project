@@ -1,0 +1,11 @@
+{
+  "worldTile": 64,
+  "sourceTile": 192,
+  "uniformScale": 0.3333333333333333,
+  "novaCanvas": 96,
+  "novaVisibleHeight": 73,
+  "voltCanvas": 48,
+  "surfaceResizedWithoutStretch": true,
+  "forestSource": "Forest Terrain Pixel Art Tileset (1).png",
+  "caveSource": "Pixel Art Cave and Lab Tileset (1).png"
+}

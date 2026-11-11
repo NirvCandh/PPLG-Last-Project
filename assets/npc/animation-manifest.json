@@ -1,0 +1,69 @@
+{
+  "Ohm": {
+    "Idle": {
+      "frames": [
+        "assets/npc/Ohm_Idle_00.png",
+        "assets/npc/Ohm_Idle_01.png",
+        "assets/npc/Ohm_Idle_02.png",
+        "assets/npc/Ohm_Idle_03.png"
+      ],
+      "fps": 5,
+      "loop": true,
+      "source": "source-assets/PROF OHM/Professor Ohm idle pixel animation strip-2.png"
+    },
+    "Talk": {
+      "frames": [
+        "assets/npc/Ohm_Talk_00.png",
+        "assets/npc/Ohm_Talk_01.png",
+        "assets/npc/Ohm_Talk_02.png",
+        "assets/npc/Ohm_Talk_03.png"
+      ],
+      "fps": 7,
+      "loop": true,
+      "source": "source-assets/PROF OHM/Professor Ohm\u2019s Four-Frame Talking Sprite-3.png"
+    },
+    "Explain": {
+      "frames": [
+        "assets/npc/Ohm_Explain_00.png",
+        "assets/npc/Ohm_Explain_01.png",
+        "assets/npc/Ohm_Explain_02.png",
+        "assets/npc/Ohm_Explain_03.png"
+      ],
+      "fps": 6,
+      "loop": true,
+      "source": "source-assets/PROF OHM/Professor Ohm points to explain-4.png"
+    },
+    "Diagnostic": {
+      "frames": [
+        "assets/npc/Ohm_Diagnostic_00.png"
+      ],
+      "fps": 1,
+      "loop": false,
+      "source": "source-assets/PROF OHM/Professor Ohm\u2019s diagnostic pixel sprite-1.png"
+    }
+  },
+  "Warga": {
+    "Idle": {
+      "frames": [
+        "assets/npc/Warga_Idle_00.png",
+        "assets/npc/Warga_Idle_01.png",
+        "assets/npc/Warga_Idle_02.png",
+        "assets/npc/Warga_Idle_03.png"
+      ],
+      "fps": 5,
+      "loop": true,
+      "source": "source-assets/NPC/Friendly tech villager idle sprite strip-1.png"
+    },
+    "Talk": {
+      "frames": [
+        "assets/npc/Warga_Talk_00.png",
+        "assets/npc/Warga_Talk_01.png",
+        "assets/npc/Warga_Talk_02.png",
+        "assets/npc/Warga_Talk_03.png"
+      ],
+      "fps": 7,
+      "loop": true,
+      "source": "source-assets/NPC/Four-frame talking villager sprite-2.png"
+    }
+  }
+}
