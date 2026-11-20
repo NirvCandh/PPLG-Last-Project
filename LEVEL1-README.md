@@ -20,9 +20,11 @@ Open **Project TA PPLG.json** in GDevelop 5 and preview **MainGame Scene**. The 
 6. Activate the environmental sensor post to restore power and disable electrical floors.
 7. Use the workbench with all four sensors. Drag components to their matching slots (or tap a chip then its slot on touch), set VCC/GND/DATA connections, and select Uji Rangkaian.
 
-Correct simulated input-board connections: all VCC → 3V3, all GND → GND; DHT22.DATA → D4, LDR.DATA → A0, Soil.DATA → A1, PIR.DATA → D5. Each connection receives red/green feedback. Successful assembly sets SensorHub = 1 and StageUnlocked = 2. These are session Global Variables; permanent browser saving and Stage 2 are outside this Level 1 implementation.
+Correct simulated input-board connections: all VCC → 3V3, all GND → GND; DHT22.DATA → D4, LDR.DATA → A0, Soil.DATA → A1, PIR.DATA → D5. Each connection receives red/green feedback. Successful assembly sets SensorHub = 1 and unlocks Stage 2. Select **Lanjut Level 2 →** on the victory screen to enter the factory with Nova's HP and energy. These are session Global Variables; permanent browser saving is not implemented. See [LEVEL2-README.md](LEVEL2-README.md) for the factory route and Smart Controller puzzle.
 
 ## Editing
+
+The Sensor Hub workbench includes a **Hint Volt** button. It explains component placement, VCC/GND/DATA, and all four signal mappings. Hints toggle without resetting selections and open automatically after an unsuccessful circuit test; feedback lists the expected port for each incorrect connection.
 
 The forest, cave, collision platforms, ladders, pickups and characters are native scene instances. Nova uses GDevelop's native Platformer behavior. Solid and Ladder use the native Platform behavior. Their collision rectangles are hidden at runtime. Sprites remain separately editable in the scene. Gameplay, HTML HUD, dialogue, mobile controls and the assembly overlay are in the scene's JavaScript event, with the same source in **level1-runtime.js**. The current stage uses a 760 px/s jump speed and a 96 px bridge gap. The cave roof steps up above the exit staircase to preserve headroom.
 

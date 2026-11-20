@@ -1,0 +1,407 @@
+{
+  "sources": [
+    "Cyberpunk Circuit Factory Panorama.png",
+    "rmbg_enemy.png",
+    "rmbg_komponen.png",
+    "rmbg_rintangan.png",
+    "rmbg_tilesheet.png"
+  ],
+  "sprites": {
+    "ESP32": {
+      "file": "assets/level2/generated/ESP32.png",
+      "width": 128,
+      "height": 112,
+      "source": "rmbg_komponen.png",
+      "box": [
+        23,
+        492,
+        324,
+        751
+      ]
+    },
+    "Relay": {
+      "file": "assets/level2/generated/Relay.png",
+      "width": 128,
+      "height": 112,
+      "source": "rmbg_komponen.png",
+      "box": [
+        307,
+        501,
+        566,
+        751
+      ]
+    },
+    "Pump": {
+      "file": "assets/level2/generated/Pump.png",
+      "width": 128,
+      "height": 112,
+      "source": "rmbg_komponen.png",
+      "box": [
+        565,
+        516,
+        802,
+        739
+      ]
+    },
+    "Servo": {
+      "file": "assets/level2/generated/Servo.png",
+      "width": 128,
+      "height": 112,
+      "source": "rmbg_komponen.png",
+      "box": [
+        805,
+        492,
+        1057,
+        760
+      ]
+    },
+    "LED": {
+      "file": "assets/level2/generated/LED.png",
+      "width": 128,
+      "height": 112,
+      "source": "rmbg_komponen.png",
+      "box": [
+        1064,
+        516,
+        1199,
+        748
+      ]
+    },
+    "Panel": {
+      "file": "assets/level2/generated/Panel.png",
+      "width": 467,
+      "height": 259,
+      "source": "rmbg_rintangan.png",
+      "box": [
+        22,
+        21,
+        514,
+        294
+      ]
+    },
+    "Shelf": {
+      "file": "assets/level2/generated/Shelf.png",
+      "width": 468,
+      "height": 169,
+      "source": "rmbg_rintangan.png",
+      "box": [
+        22,
+        701,
+        514,
+        883
+      ]
+    },
+    "Conveyor0": {
+      "file": "assets/level2/generated/Conveyor0.png",
+      "width": 512,
+      "height": 248,
+      "source": "rmbg_rintangan.png",
+      "box": [
+        530,
+        75,
+        1042,
+        309
+      ]
+    },
+    "Conveyor1": {
+      "file": "assets/level2/generated/Conveyor1.png",
+      "width": 512,
+      "height": 248,
+      "source": "rmbg_rintangan.png",
+      "box": [
+        530,
+        365,
+        1042,
+        610
+      ]
+    },
+    "Laser": {
+      "file": "assets/level2/generated/Laser.png",
+      "width": 152,
+      "height": 600,
+      "source": "rmbg_rintangan.png",
+      "box": [
+        1110,
+        17,
+        1283,
+        634
+      ]
+    },
+    "Switch": {
+      "file": "assets/level2/generated/Switch.png",
+      "width": 233,
+      "height": 220,
+      "source": "rmbg_rintangan.png",
+      "box": [
+        1352,
+        56,
+        1607,
+        297
+      ]
+    },
+    "Research": {
+      "file": "assets/level2/generated/Research.png",
+      "width": 293,
+      "height": 285,
+      "source": "rmbg_rintangan.png",
+      "box": [
+        1322,
+        325,
+        1630,
+        628
+      ]
+    },
+    "Workbench": {
+      "file": "assets/level2/generated/Workbench.png",
+      "width": 338,
+      "height": 271,
+      "source": "rmbg_rintangan.png",
+      "box": [
+        1296,
+        631,
+        1651,
+        908
+      ]
+    },
+    "Armored0": {
+      "file": "assets/level2/generated/Armored0.png",
+      "width": 160,
+      "height": 112,
+      "source": "rmbg_enemy.png",
+      "box": [
+        25,
+        100,
+        404,
+        326
+      ]
+    },
+    "Armored1": {
+      "file": "assets/level2/generated/Armored1.png",
+      "width": 160,
+      "height": 112,
+      "source": "rmbg_enemy.png",
+      "box": [
+        428,
+        100,
+        806,
+        326
+      ]
+    },
+    "Armored2": {
+      "file": "assets/level2/generated/Armored2.png",
+      "width": 160,
+      "height": 112,
+      "source": "rmbg_enemy.png",
+      "box": [
+        25,
+        354,
+        404,
+        579
+      ]
+    },
+    "Armored3": {
+      "file": "assets/level2/generated/Armored3.png",
+      "width": 160,
+      "height": 112,
+      "source": "rmbg_enemy.png",
+      "box": [
+        428,
+        354,
+        806,
+        579
+      ]
+    },
+    "Shooter0": {
+      "file": "assets/level2/generated/Shooter0.png",
+      "width": 112,
+      "height": 144,
+      "source": "rmbg_enemy.png",
+      "box": [
+        20,
+        639,
+        247,
+        917
+      ]
+    },
+    "Shooter1": {
+      "file": "assets/level2/generated/Shooter1.png",
+      "width": 112,
+      "height": 144,
+      "source": "rmbg_enemy.png",
+      "box": [
+        248,
+        639,
+        465,
+        917
+      ]
+    },
+    "Shooter2": {
+      "file": "assets/level2/generated/Shooter2.png",
+      "width": 112,
+      "height": 144,
+      "source": "rmbg_enemy.png",
+      "box": [
+        467,
+        639,
+        691,
+        917
+      ]
+    },
+    "Shooter3": {
+      "file": "assets/level2/generated/Shooter3.png",
+      "width": 112,
+      "height": 144,
+      "source": "rmbg_enemy.png",
+      "box": [
+        703,
+        639,
+        951,
+        917
+      ]
+    },
+    "EnemyPulse": {
+      "file": "assets/level2/generated/EnemyPulse.png",
+      "width": 96,
+      "height": 48,
+      "source": "rmbg_enemy.png",
+      "box": [
+        990,
+        1004,
+        1239,
+        1129
+      ]
+    },
+    "MetalTop": {
+      "file": "assets/level2/generated/MetalTop.png",
+      "width": 64,
+      "height": 64,
+      "source": "rmbg_tilesheet.png",
+      "box": [
+        170,
+        68,
+        305,
+        208
+      ]
+    },
+    "MetalFill": {
+      "file": "assets/level2/generated/MetalFill.png",
+      "width": 64,
+      "height": 64,
+      "source": "rmbg_tilesheet.png",
+      "box": [
+        170,
+        231,
+        305,
+        369
+      ]
+    },
+    "MetalCircuit": {
+      "file": "assets/level2/generated/MetalCircuit.png",
+      "width": 64,
+      "height": 64,
+      "source": "rmbg_tilesheet.png",
+      "box": [
+        320,
+        393,
+        452,
+        533
+      ]
+    },
+    "Waste0": {
+      "file": "assets/level2/generated/Waste0.png",
+      "width": 64,
+      "height": 64,
+      "source": "rmbg_tilesheet.png",
+      "box": [
+        1070,
+        65,
+        1207,
+        211
+      ]
+    },
+    "Electric0": {
+      "file": "assets/level2/generated/Electric0.png",
+      "width": 64,
+      "height": 64,
+      "source": "rmbg_tilesheet.png",
+      "box": [
+        1070,
+        725,
+        1207,
+        877
+      ]
+    },
+    "Waste1": {
+      "file": "assets/level2/generated/Waste1.png",
+      "width": 64,
+      "height": 64,
+      "source": "rmbg_tilesheet.png",
+      "box": [
+        1220,
+        65,
+        1357,
+        211
+      ]
+    },
+    "Electric1": {
+      "file": "assets/level2/generated/Electric1.png",
+      "width": 64,
+      "height": 64,
+      "source": "rmbg_tilesheet.png",
+      "box": [
+        1220,
+        725,
+        1357,
+        877
+      ]
+    },
+    "Waste2": {
+      "file": "assets/level2/generated/Waste2.png",
+      "width": 64,
+      "height": 64,
+      "source": "rmbg_tilesheet.png",
+      "box": [
+        1370,
+        65,
+        1507,
+        211
+      ]
+    },
+    "Electric2": {
+      "file": "assets/level2/generated/Electric2.png",
+      "width": 64,
+      "height": 64,
+      "source": "rmbg_tilesheet.png",
+      "box": [
+        1370,
+        725,
+        1507,
+        877
+      ]
+    },
+    "Waste3": {
+      "file": "assets/level2/generated/Waste3.png",
+      "width": 64,
+      "height": 64,
+      "source": "rmbg_tilesheet.png",
+      "box": [
+        1520,
+        65,
+        1657,
+        211
+      ]
+    },
+    "Electric3": {
+      "file": "assets/level2/generated/Electric3.png",
+      "width": 64,
+      "height": 64,
+      "source": "rmbg_tilesheet.png",
+      "box": [
+        1520,
+        725,
+        1657,
+        877
+      ]
+    }
+  }
+}

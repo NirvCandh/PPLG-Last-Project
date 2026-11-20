@@ -1,0 +1,1911 @@
+GAME DESIGN DOCUMENT (GDD)
+Circuit Quest
+Petualangan Rangkai IoT
+Kumpulkan komponen, taklukkan bug, rangkai desa pintarmu!
+Genre
+2D Side-Scrolling Platformer
+Engine
+GDevelop 5
+Platform target
+Web / HTML5
+Gaya visual
+2D Pixel Art
+Mode
+Single Player
+Status dokumen
+Revisi final (menggantikan GDD awal)
+Proyek Akhir Mata Kuliah Pengembangan Game  |  Output: Web (HTML5)
+Dokumen mengikuti format Unity GDD Template (susunan bab dipertahankan)
+Tanggal revisi: 4 November 2026
+
+Daftar Isi
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 4
+1. Ringkasan Konsep
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 5
+2. Cerita (Story Synopsis)
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 5
+3. Gameplay
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 5
+3.1 Deskripsi Gameplay
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 6
+3.2 Core Gameplay Loop
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 7
+3.3 Game Play Outline
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 7
+3.4 Key Features
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 7
+3.5 Sistem Eksplorasi Side-Scrolling
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 8
+3.6 Sistem NPC dan Quest
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 9
+4. Player Definition and Properties
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 9
+4.1 Player Definition
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 9
+4.2 Player Definitions
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 9
+4.3 Player Properties (Atribut Game)
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 9
+4.4 Player Rewards (Pick-ups)
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 10
+4.5 Mekanik HP, Energi, dan Pulse Wave
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 10
+5. Game Design Definitions
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 10
+5.1 Design Guidelines
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 11
+5.2 Game Design Definitions
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 11
+5.3 Review Fitur GDD Awal
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 12
+6. Game Flowchart
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 12
+6.1 Alur Navigasi Scene
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 13
+6.2 Alur Gameplay dalam Game Session
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 15
+6.3 Keterangan Flowchart
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 15
+7. Level Design
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 15
+7.1 Struktur Peta dan Scene (Model C: Hybrid)
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 16
+7.2 Stage 1: Hutan Sensor (Input / Sensing)
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 17
+7.3 Stage 2: Pabrik Mikrokontroler (Processing / Output)
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 18
+7.4 Stage 3: Menara Cloud (Communication / Integration)
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 20
+7.5 Ringkasan Rintangan dan Bahaya Lingkungan
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 20
+8. Character Design
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 20
+8.1 Daftar Karakter
+Circuit Quest: Petualangan Rangkai IoT
+Game Design Document  |  Revisi GDevelop 5
+GDD - Circuit Quest: Petualangan Rangkai IoT  |  Proyek Akhir Mata Kuliah Pengembangan Game
+Halaman 2 dari 30
+
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 21
+8.2 Prof. Ohm sebagai Technical Mentor
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 21
+8.3 NPC Warga Desa Sensorika
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 21
+8.4 Bug-Zero (Big Boss)
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 21
+8.5 Musuh Reguler
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 22
+9. User Interface
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 22
+9.1 Kontrol
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 22
+9.2 Tata Letak HUD (Game Session)
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 22
+9.3 Struktur Layar (Game Structure)
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 24
+9.4 Audio
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 24
+9.5 Aset Grafis
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 24
+10. Technical Specification
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 24
+10.1 Spesifikasi Teknis
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 25
+10.2 Catatan Pengembangan
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 25
+10.3 Global Variables (Usulan)
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 25
+10.4 Sistem Quest berbasis Event dan Variabel
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 25
+10.5 Validasi Puzzle Perakitan
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 26
+11. Technical Architecture
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 27
+12. Development Schedule
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 27
+12.1 Batasan dan Prioritas Pengembangan
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 27
+12.2 Jadwal Pengembangan (Contoh 4 Minggu)
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 27
+12.3 Pengembangan Lanjutan (Opsional, Bila Ada Waktu)
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 28
+13. Risk Management
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 28
+Lampiran A. Hal yang Perlu Ditentukan saat Implementasi
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 30
+Lampiran B. Ringkasan Perubahan dari GDD Awal
+Panduan membaca dokumen.
+ Dokumen ini adalah revisi GDD Circuit Quest dan menggantikan versi awal yang
+berbasis Unity dan perspektif top-down. Beberapa konvensi yang dipakai: (1) istilah 
+Stage
+ menggantikan 
+Level
+ dan
+HP
+ menggantikan 
+Nyawa
+; (2) hal teknis atau desain yang belum ditetapkan ditandai dengan frasa 
+Perlu
+ditentukan saat implementasi
+ dan dirangkum pada Lampiran A; (3) angka yang tercantum sebagai nilai awal
+berasal dari GDD awal dan diperlakukan sebagai acuan balancing, bukan nilai final; (4) fitur yang dihapus tidak
+dimunculkan kembali, ringkasannya ada pada Bab 5.3 dan Lampiran B.
+Circuit Quest: Petualangan Rangkai IoT
+Game Design Document  |  Revisi GDevelop 5
+GDD - Circuit Quest: Petualangan Rangkai IoT  |  Proyek Akhir Mata Kuliah Pengembangan Game
+Halaman 3 dari 30
+
+1. Ringkasan Konsep
+Game Name
+Circuit Quest: Petualangan Rangkai IoT
+Tagline
+Kumpulkan komponen, taklukkan bug, rangkai desa pintarmu!
+Genre
+2D Side-Scrolling Platformer
+Perspektif
+Side-scrolling (kamera dari samping); layar close-up breadboard untuk puzzle perakitan
+Gaya visual
+2D Pixel Art
+Mode
+Single Player
+Engine
+GDevelop 5
+Platform target
+Web / HTML5
+Tema
+Petualangan dan pembelajaran Internet of Things (IoT)
+Struktur
+3 stage: Hutan Sensor, Pabrik Mikrokontroler, dan Menara Cloud
+Ide Besar
+Pemain mengendalikan 
+Nova
+, seorang teknisi muda yang menjelajahi tiga wilayah bertema teknologi untuk
+mengumpulkan komponen IoT (sensor, mikrokontroler, aktuator, dan modul komunikasi), membantu warga,
+menghadapi musuh, dan menyelesaikan puzzle perakitan. Misi utamanya adalah merangkai setiap alat IoT yang
+didapat dari Stage 1 sampai Stage 3 menjadi satu sistem 
+Smart Greenhouse
+ (Rumah Kaca Pintar) yang
+memulihkan Desa Sensorika dari gangguan virus Bug-Zero.
+Nilai Edukasi
+Pemain belajar fungsi komponen IoT, cara menyambungkan pin (VCC, GND, dan pin sinyal), serta alur data dari
+sensor ke mikrokontroler, ke cloud, lalu ke aktuator. Pembelajaran dibuat lewat gameplay (eksplorasi, quest
+pertanyaan NPC, dan puzzle perakitan), bukan lewat teks panjang.
+Game Elements
+Aktivitas dasar yang dilakukan pemain demi kesenangan:
+
+Menjelajahi peta side-scrolling: berlari, melompat ke platform yang lebih tinggi, turun ke area bawah tanah,
+dan menemukan komponen serta collectible tersembunyi.
+
+Berinteraksi dengan NPC, menerima quest, dan menjawab pertanyaan seputar materi IoT untuk memperoleh
+reward.
+
+Mengalahkan musuh bertema bug dan malware dengan serangan Pulse Wave yang memakai Energi.
+
+Menghindari bahaya lingkungan seperti semak berduri listrik, pintu laser, dan zona korsleting.
+
+Memecahkan puzzle perakitan (drag and drop komponen, hubungkan kabel pada breadboard).
+
+Menghadapi Bug-Zero sebagai satu-satunya Big Boss, memulihkannya, lalu mengaktifkan Smart Greenhouse.
+Player
+1 pemain (single player).
+Circuit Quest: Petualangan Rangkai IoT
+Game Design Document  |  Revisi GDevelop 5
+GDD - Circuit Quest: Petualangan Rangkai IoT  |  Proyek Akhir Mata Kuliah Pengembangan Game
+Halaman 4 dari 30
+
+2. Cerita (Story Synopsis)
+Di Desa Sensorika, seluruh kehidupan dijalankan oleh sistem IoT: irigasi otomatis, lampu jalan, dan pemantau
+cuaca. Suatu malam, virus bernama 
+Bug-Zero
+ menyebabkan blackout besar. Perangkat IoT desa rusak dan
+komponennya tersebar ke tiga wilayah, sementara gangguan virus menyebar ke berbagai tempat.
+Tokoh utama, 
+Nova
+, seorang teknisi muda, ditemani robot kecil bernama 
+Volt
+, memulai petualangan untuk
+mengumpulkan kembali komponen yang hilang. Bersama mentornya, 
+Prof. Ohm
+, Nova harus merakit sistem
+Smart Greenhouse agar tanaman pangan desa selamat dari kegagalan panen.
+Alur cerita berkaitan antar stage (materi: IoT):
+1.
+Stage 1 (Input / Pengindraan):
+ Nova mengumpulkan mata dan telinga sistem, yaitu sensor.
+2.
+Stage 2 (Pemrosesan dan Output):
+ Nova mengumpulkan otak dan tangan sistem, yaitu mikrokontroler dan
+aktuator.
+3.
+Stage 3 (Komunikasi dan Integrasi):
+ Nova mengumpulkan suara sistem, yaitu modul WiFi dan dashboard,
+menghadapi Bug-Zero, memulihkannya, lalu merakit seluruh komponen dari Stage 1 sampai 3 menjadi Smart
+Greenhouse.
+Setiap stage berakhir dengan Puzzle Perakitan. Hasil rakitan stage sebelumnya terbawa dan menjadi dasar stage
+berikutnya, sehingga cerita dan materi saling berkaitan. Tujuan akhir cerita adalah memulihkan sistem IoT desa
+melalui Smart Greenhouse.
+Keputusan khusus Bug-Zero.
+ Bug-Zero tetap menjadi satu-satunya Big Boss dalam game. Pada Stage 3, pemain (1)
+menghadapi Bug-Zero dalam boss encounter, (2) menyelesaikan proses pemulihan atau perbaikan Bug-Zero, dan
+(3) menyelesaikan puzzle final Smart Greenhouse. Dengan demikian penyelesaian cerita menggabungkan
+pertarungan, pemulihan karakter antagonis, dan puzzle integrasi.
+Ringkasan Struktur Cerita per Stage
+Stage
+Wilayah
+Peran dalam Cerita
+Hasil Stage
+1
+Hutan Sensor
+Mengumpulkan sensor sebagai mata dan telinga
+sistem
+Sensor Hub
+2
+Pabrik Mikrokontroler
+Mengumpulkan otak (ESP32) dan tangan (aktuator)
+sistem
+Smart Controller
+3
+Menara Cloud
+Mengumpulkan suara sistem, menghadapi dan
+memulihkan Bug-Zero, mengintegrasikan seluruh
+sistem
+Smart Greenhouse aktif
+dan Desa Sensorika pulih
+Spesifikasi teknis lengkap (engine, resolusi, penyimpanan, dan sebagainya) dibahas pada Bab 10.
+3. Gameplay
+3.1 Deskripsi Gameplay
+Pemain membuka game di browser dan disambut 
+Home Screen
+ bernuansa papan sirkuit yang bercahaya dengan
+lima menu: Start, Level, Settings, Quit, dan About. Setelah memulai game atau memilih stage, pemain masuk ke
+peta stage berbentuk side-scrolling. Nova berlari, melompat antar-platform, dan dapat turun ke area bawah
+tanah melalui tangga, gua, lorong, atau pintu tertentu. Robot Volt melayang di sisinya dan memberi petunjuk
+singkat.
+Circuit Quest: Petualangan Rangkai IoT
+Game Design Document  |  Revisi GDevelop 5
+GDD - Circuit Quest: Petualangan Rangkai IoT  |  Proyek Akhir Mata Kuliah Pengembangan Game
+Halaman 5 dari 30
+
+Saat menjelajah, Nova menemukan peti komponen dan item tersembunyi, serta bertemu NPC warga Desa
+Sensorika yang menjelaskan masalah wilayah dan memberikan quest. Musuh bertema bug dan malware
+menghadang; Nova menyerang dengan 
+Pulse Wave
+, proyektil energi yang menguras Energi. Jika Energi habis,
+Nova harus mengumpulkan Baterai Mini atau beristirahat di stasiun pengisian. HP berkurang ketika Nova terkena
+serangan musuh atau bahaya lingkungan, dan HP mencapai 0 berarti game session berakhir dengan kekalahan.
+Di Research Station, Prof. Ohm menjelaskan materi IoT, fungsi komponen, progres misi, dan petunjuk puzzle. Di
+ujung stage, Nova menemukan 
+Workbench (Meja Rakit)
+ dan masuk ke Puzzle Assembly Scene: pemain menaruh
+komponen di atas breadboard, menyambungkan kabel dari pin yang tepat, dan menekan tombol Uji Rangkaian.
+Bila benar, lampu menyala dan layar menampilkan data sensor secara langsung sehingga pemain merasa
+benar-benar menghidupkan sebuah alat IoT. Bila salah, terjadi korsleting kecil dan Volt memberi petunjuk. Pada
+Stage 3, sebelum puzzle final pemain menghadapi Bug-Zero dalam boss encounter lalu memulihkannya.
+3.2 Core Gameplay Loop
+1.
+Eksplorasi wilayah.
+2.
+Interaksi dengan NPC.
+3.
+Menyelesaikan quest dan tantangan.
+4.
+Mengumpulkan komponen dan collectible.
+5.
+Menghadapi musuh dan rintangan.
+6.
+Menyelesaikan puzzle perakitan.
+7.
+Membuka progres stage berikutnya.
+Circuit Quest: Petualangan Rangkai IoT
+Game Design Document  |  Revisi GDevelop 5
+GDD - Circuit Quest: Petualangan Rangkai IoT  |  Proyek Akhir Mata Kuliah Pengembangan Game
+Halaman 6 dari 30
+
+3.3 Game Play Outline
+Aspek
+Deskripsi
+Opening the game
+application
+Layar pemuatan (loading bar bergaya sirkuit), lalu Home Screen dengan musik tema.
+Game options
+Menu Settings: volume musik, volume efek, pilihan kontrol (keyboard atau touch), dan
+tombol layar penuh.
+Story synopsis
+Panel cerita singkat: 3 panel sebelum Stage 1 dan 1 panel pembuka untuk tiap stage
+berikutnya, ditampilkan sebagai overlay pada scene yang ada (tanpa scene tambahan). Di
+luar prioritas utama; dikerjakan bila waktu memungkinkan. Isi panel: 
+Perlu ditentukan saat
+implementasi
+.
+Modes
+Mode Cerita (utama). Opsional: Mode Latihan Rakit (lihat Bab 12.3).
+Game elements
+Eksplorasi platformer, quest NPC, pertarungan dengan Pulse Wave, bahaya lingkungan,
+collectible dan inventory, serta puzzle perakitan.
+Game levels
+3 stage (detail pada Bab 7).
+Player's controls
+Lihat Bab 9.1.
+Winning
+Stage 1 dan 2: mengumpulkan komponen wajib, menyelesaikan tantangan stage, dan
+menyelesaikan puzzle perakitan. Stage 3: menghadapi Bug-Zero, memulihkannya, dan
+menyelesaikan puzzle final sehingga Smart Greenhouse menyala.
+Losing
+HP mencapai 0. Pada puzzle final Stage 3, game session juga kalah bila timer perakitan habis
+(dipertahankan dari GDD awal; durasi: 
+Perlu ditentukan saat implementasi
+).
+End
+Win Screen (stage selesai, hasil rakitan, tombol lanjut) atau Game Over Screen (pesan
+penyemangat Volt, tombol Coba Lagi dan Kembali ke Menu).
+Why is all this fun?
+Pemain merasakan kepuasan membangun sesuatu yang nyata: komponen yang dikumpulkan
+lewat perjuangan benar-benar dirakit dan hidup di layar. Ada rasa progres lewat stage yang
+terbuka bertahap, tantangan platforming, dan pelajaran IoT yang terasa seperti sulap, bukan
+pelajaran.
+3.4 Key Features
+
+Petualangan 3 stage side-scrolling dengan cerita bersambung bertema IoT.
+
+Eksplorasi tidak hanya horizontal: platform bertingkat, area bawah tanah, gua, lorong, dan ruangan
+tersembunyi.
+
+Quest NPC berbasis pertanyaan IoT dengan reward komponen atau item.
+
+Puzzle perakitan interaktif ala breadboard dengan validasi rangkaian.
+
+Dua sumber daya inti, yaitu HP dan Energi (amunisi Pulse Wave), serta tiga jenis item koleksi.
+
+Komponen IoT nyata (DHT22, soil moisture, PIR, ESP32, relay, pompa, MQTT, dan lainnya) yang fungsinya
+dijelaskan oleh Prof. Ohm sebagai Technical Mentor.
+
+Satu Big Boss, Bug-Zero, dengan alur pertarungan, pemulihan, dan puzzle integrasi.
+
+Audio dan musik latar berbeda tiap stage.
+
+Berjalan di browser (Web / HTML5) dan dikembangkan dengan GDevelop 5.
+3.5 Sistem Eksplorasi Side-Scrolling
+Genre berubah dari top-down menjadi 2D Side-Scrolling Platformer, tetapi eksplorasi tidak boleh berupa
+pergerakan kiri ke kanan saja. Pemain harus dapat melakukan hal berikut:
+Circuit Quest: Petualangan Rangkai IoT
+Game Design Document  |  Revisi GDevelop 5
+GDD - Circuit Quest: Petualangan Rangkai IoT  |  Proyek Akhir Mata Kuliah Pengembangan Game
+Halaman 7 dari 30
+
+Kemampuan Eksplorasi
+Penjelasan
+Menjelajahi jalur horizontal
+Peta utama stage bergulir secara horizontal mengikuti Nova.
+Melompat ke platform lebih tinggi
+Platform bertingkat menjadi jalur alternatif dan lokasi item tersembunyi.
+Turun ke area bawah tanah
+Melalui tangga, gua, atau lorong menuju sub-area di bawah peta utama.
+Memasuki gua, lorong, ruangan, atau
+pintu
+Sub-area yang menyimpan komponen, collectible, NPC, atau Research Station.
+Menemukan komponen dan
+collectible tersembunyi
+Tersimpan di peti, ruang rahasia, dan sudut peta yang sulit dijangkau.
+Berinteraksi dengan NPC dan objek
+lingkungan
+Dialog dan quest NPC, peti, sakelar, Workbench, dan Research Station.
+Struktur peta yang dipilih (Model C: Hybrid) dijelaskan pada Bab 7.1.
+3.6 Sistem NPC dan Quest
+NPC memiliki lima fungsi dalam gameplay:
+
+Menjelaskan kondisi wilayah.
+
+Memberikan konteks permasalahan.
+
+Memberikan quest.
+
+Mengajukan pertanyaan seputar materi IoT.
+
+Memberikan reward berupa komponen atau item.
+Alur Quest
+1.
+Pemain berinteraksi dengan NPC.
+2.
+NPC menjelaskan permasalahan.
+3.
+NPC memberikan pertanyaan.
+4.
+Pemain memilih jawaban.
+5.
+Jawaban benar menyelesaikan quest.
+6.
+Pemain memperoleh reward.
+7.
+Jawaban salah memberikan petunjuk dan kesempatan mencoba kembali.
+Contoh Pertanyaan Quest
+Stage
+Pertanyaan
+Jawaban
+1
+Sensor apa yang digunakan untuk mengukur kelembapan tanah?
+Soil Moisture Sensor
+2
+Apa fungsi ESP32?
+Memproses data dan mengendalikan
+perangkat
+3
+Protokol apa yang digunakan untuk pertukaran pesan IoT?
+MQTT
+Jumlah NPC dan quest bersifat fleksibel dan tidak dikunci sebelum implementasi; disesuaikan dengan waktu dan
+kapasitas tim. Hal yang belum ditetapkan: daftar lengkap pertanyaan, jumlah pilihan jawaban, apakah quest
+tertentu wajib untuk menyelesaikan stage, serta distribusi reward: 
+Perlu ditentukan saat implementasi
+.
+Circuit Quest: Petualangan Rangkai IoT
+Game Design Document  |  Revisi GDevelop 5
+GDD - Circuit Quest: Petualangan Rangkai IoT  |  Proyek Akhir Mata Kuliah Pengembangan Game
+Halaman 8 dari 30
+
+4. Player Definition and Properties
+4.1 Player Definition
+Nova
+ (tokoh utama): teknisi muda yang cerdas dan pantang menyerah. 
+Volt
+: robot pendamping yang melayang
+di sisi Nova dan memberikan petunjuk singkat kontekstual.
+4.2 Player Definitions
+Elemen
+Definisi
+Health (HP)
+Daya tahan Nova. Berkurang karena serangan musuh atau bahaya lingkungan. HP mencapai 0
+berarti game session kalah.
+Weapon
+Pulse Wave: serangan energi berupa proyektil. Hanya satu jenis Pulse Wave, tanpa sistem
+upgrade.
+Actions
+Berjalan, melompat, menyerang (Pulse Wave), naik atau turun tangga, berinteraksi (berbicara
+dengan NPC, membuka peti, memakai sakelar, memakai Workbench, dan berbicara dengan Prof.
+Ohm di Research Station).
+4.3 Player Properties (Atribut Game)
+Game ini memiliki tiga properti yang dipantau selama game session:
+Atribut
+Fungsi
+Nilai Awal
+Umpan Balik saat Berubah
+HP
+Ketahanan Nova. Habis berarti kalah.
+5 hati (acuan GDD
+awal)
+Layar berkedip merah, suara zap,
+karakter terpental
+Energi
+Amunisi serangan Pulse Wave. Bukan
+mata uang dan bukan booster.
+100 (acuan GDD awal)
+Bar energi berkedip, bunyi beep
+peringatan di bawah 20
+Progres
+Komponen
+Jumlah komponen wajib yang sudah
+terkumpul pada stage berjalan
+(contoh: 3/4).
+0 dari jumlah
+komponen wajib
+stage
+Penghitung HUD bertambah dan
+efek suara ambil komponen
+Nilai final HP dan Energi ditetapkan saat balancing: 
+Perlu ditentukan saat implementasi
+.
+4.4 Player Rewards (Pick-ups)
+Game ini memiliki tiga jenis item koleksi. Seluruhnya berfungsi langsung (tidak ada konversi item, booster, atau
+mata uang).
+Item Koleksi
+Dari Mana
+Fungsi
+Baterai Mini
+Peti, musuh, tersebar di peta
+Memulihkan 20 Energi
+Kabel Jumper
+Peti, area tersembunyi
+Digunakan di puzzle perakitan
+Hati Kapasitor
+Langka, area rahasia
+Memulihkan 1 HP
+Selain itu, 
+Komponen IoT
+ (sensor, ESP32, relay, dan sebagainya) adalah item misi. Komponen wajib dikumpulkan
+untuk perakitan dan fungsinya dijelaskan Prof. Ohm. Seluruh item tersimpan di Inventory. Kapasitas Inventory
+(jika dibatasi) dan jumlah Kabel Jumper yang dibutuhkan puzzle: 
+Perlu ditentukan saat implementasi
+.
+Circuit Quest: Petualangan Rangkai IoT
+Game Design Document  |  Revisi GDevelop 5
+GDD - Circuit Quest: Petualangan Rangkai IoT  |  Proyek Akhir Mata Kuliah Pengembangan Game
+Halaman 9 dari 30
+
+4.5 Mekanik HP, Energi, dan Pulse Wave
+HP
+
+Menentukan daya tahan Nova.
+
+Berkurang ketika terkena serangan musuh atau bahaya lingkungan.
+
+HP mencapai 0 berarti game session kalah.
+Energi
+
+Berfungsi sebagai amunisi untuk serangan Pulse Wave.
+
+Berkurang ketika pemain menembakkan proyektil.
+
+Bukan mata uang dan bukan booster; tidak dianggap sebagai sistem senjata yang kompleks, cukup sebagai
+sumber daya untuk menembakkan proyektil.
+
+Dipulihkan dengan Baterai Mini atau stasiun pengisian (jumlah dan penempatan stasiun: 
+Perlu ditentukan
+saat implementasi
+).
+Implementasi Pulse Wave di GDevelop 5
+Pulse Wave dibuat sebagai object atau projectile asset dalam game. Event GDevelop mengatur hal berikut:
+Aspek
+Pengaturan melalui Event
+Spawn proyektil
+Membuat instance Pulse Wave di posisi Nova saat tombol serang ditekan dan Energi
+mencukupi.
+Arah dan kecepatan
+Proyektil bergerak searah hadap Nova dengan kecepatan tertentu.
+Collision dengan musuh
+Mendeteksi tabrakan antara proyektil dan objek musuh.
+Damage terhadap musuh
+Mengurangi ketahanan musuh yang terkena proyektil.
+Pengurangan energi
+Mengurangi nilai Energi setiap kali proyektil ditembakkan.
+Penghapusan proyektil
+Proyektil dihapus setelah mengenai target atau melewati batas area.
+Nilai damage, biaya Energi per tembakan, kecepatan dan jarak jangkau proyektil (acuan GDD awal: jarak pendek),
+serta damage musuh dan bahaya lingkungan terhadap HP: 
+Perlu ditentukan saat implementasi
+.
+5. Game Design Definitions
+5.1 Design Guidelines
+
+Tujuan umum desain:
+ membuat konsep IoT mudah dipahami lewat aksi langsung. Setiap komponen yang
+ditemukan harus punya fungsi jelas di rangkaian akhir.
+
+Batasan kreatif:
+ semua aset berlisensi bebas, buatan sendiri, atau AI generated. Konten ramah semua usia
+(kekerasan hanya berupa efek energi terhadap bug).
+
+Tingkat kesulitan:
+ naik bertahap. Stage 1 memperkenalkan, Stage 2 menggabungkan, Stage 3 menguji
+pemahaman.
+
+Prinsip pembelajaran:
+ tidak ada teks tutorial panjang. Volt memberi petunjuk singkat kontekstual (maksimal
+2 kalimat); penjelasan lebih dalam disediakan Prof. Ohm di Research Station bagi pemain yang
+membutuhkan.
+
+Gaya visual:
+ pixel art terang bernuansa neon biru-hijau dengan latar gelap bak papan sirkuit.
+
+Prinsip lingkup:
+ fokus pada gameplay inti yang dapat dimainkan dari awal sampai akhir; event dan objek
+digunakan ulang antar-stage (lihat Bab 12.1).
+Circuit Quest: Petualangan Rangkai IoT
+Game Design Document  |  Revisi GDevelop 5
+GDD - Circuit Quest: Petualangan Rangkai IoT  |  Proyek Akhir Mata Kuliah Pengembangan Game
+Halaman 10 dari 30
+
+5.2 Game Design Definitions
+Aspek
+Definisi
+Cara menang
+Menyelesaikan misi stage (mengumpulkan semua komponen wajib), melewati tantangan
+khusus stage atau boss encounter (Stage 3), dan merakit rangkaian dengan benar.
+Cara kalah
+HP = 0. Pada puzzle final Stage 3, kalah juga bila timer perakitan habis (durasi: 
+Perlu ditentukan
+saat implementasi
+).
+Transisi stage
+Setelah puzzle perakitan sukses, stage berikutnya terbuka di Level Select. Hasil rakitan (Sensor
+Hub, Smart Controller) dibawa ke stage berikutnya melalui Global Variables.
+Fokus gameplay
+Mengumpulkan komponen lewat petualangan platformer lalu mengubahnya menjadi sistem
+IoT yang berfungsi.
+Syarat Penyelesaian Stage
+Stage
+Syarat Penyelesaian
+Hasil
+1 - Hutan Sensor
+Mengumpulkan 4 komponen wajib, melewati Environmental
+Challenge, dan menyelesaikan puzzle perakitan sensor.
+Sensor Hub
+2 - Pabrik
+Mikrokontroler
+Mengumpulkan 5 komponen wajib, melewati Escape + Logic
+Challenge, dan menyelesaikan puzzle ESP32 dan aktuator.
+Smart Controller
+3 - Menara Cloud
+Mengumpulkan komponen komunikasi, menghadapi Bug-Zero,
+memulihkan Bug-Zero, dan menyelesaikan puzzle final integrasi.
+Smart Greenhouse aktif
+Tidak ada Big Boss pada Stage 1 dan Stage 2; satu-satunya Big Boss adalah Bug-Zero pada Stage 3.
+5.3 Review Fitur GDD Awal
+Fitur GDD awal dipertahankan atau disederhanakan berdasarkan keputusan berikut.
+Circuit Quest: Petualangan Rangkai IoT
+Game Design Document  |  Revisi GDevelop 5
+GDD - Circuit Quest: Petualangan Rangkai IoT  |  Proyek Akhir Mata Kuliah Pengembangan Game
+Halaman 11 dari 30
+
+Fitur Awal
+Keputusan Final
+Catatan
+HP
+Tetap
+Menggantikan istilah Nyawa.
+Energi
+Tetap
+Sebagai amunisi Pulse Wave.
+Pulse Wave
+Tetap
+Satu jenis, tanpa upgrade.
+Game Session
+Tetap
+Home Screen
+Tetap
+Lima menu: Start, Level, Settings, Quit, About.
+About
+Tetap
+Inventory
+Tetap
+Menyimpan komponen misi dan item koleksi.
+Collectible
+Tetap
+Tiga jenis: Baterai Mini, Kabel Jumper, Hati Kapasitor.
+Quest NPC
+Tetap
+Jumlah fleksibel.
+Puzzle perakitan
+Tetap
+Tiga puzzle, satu per stage.
+XP
+Hapus
+Booster
+Hapus
+Bintang
+Hapus
+Koin
+Hapus
+Shop (Toko)
+Hapus
+Item Exchange (pertukaran item)
+Hapus
+Prof. Ohm tidak lagi berperan sebagai penjaga toko.
+Sistem turunan yang ikut dihapus bersama keputusan di atas: upgrade berbasis XP (termasuk Level Nova dan
+Pulse Wave Plus atau Max) dan ekonomi dalam game secara keseluruhan.
+6. Game Flowchart
+Flowchart berikut menggambarkan alur gameplay Circuit Quest. Gambar 6.1 menunjukkan navigasi antar-scene,
+sedangkan Gambar 6.2 menunjukkan alur di dalam satu game session. Referensi bab mengarah ke bagian
+dokumen ini.
+6.1 Alur Navigasi Scene
+Circuit Quest: Petualangan Rangkai IoT
+Game Design Document  |  Revisi GDevelop 5
+GDD - Circuit Quest: Petualangan Rangkai IoT  |  Proyek Akhir Mata Kuliah Pengembangan Game
+Halaman 12 dari 30
+
+Home Screen
+Settings
+Start
+Level
+About
+Quit
+Pengaturan Audio
+dan Kontrol
+Panel Cerita (opsional)
+lalu Stage 1
+Level Select
+Stage 1-3, terkunci
+bertahap
+Scene About
+Keluar dari game
+kembali ke Home Screen
+kembali ke Home Screen
+Game Session
+(Main Map stage terpilih)
+Puzzle Perakitan (Assembly Scene)
+salah: korsleting, ulangi puzzle
+Workbench
+End Session: WIN
+Stage berikutnya terbuka
+(kembali ke Level Select)
+End Session: GAME OVER
+Coba Lagi atau
+Kembali ke Menu
+benar
+timer final habis (Stage 3)
+HP = 0
+Gambar 6.1 Alur navigasi scene dari Home Screen sampai End Session
+6.2 Alur Gameplay dalam Game Session
+Circuit Quest: Petualangan Rangkai IoT
+Game Design Document  |  Revisi GDevelop 5
+GDD - Circuit Quest: Petualangan Rangkai IoT  |  Proyek Akhir Mata Kuliah Pengembangan Game
+Halaman 13 dari 30
+
+Mulai Stage (Main Map)
+Eksplorasi Main Map
+berlari, melompat, naik atau turun platform
+Interaksi NPC dan Research Station
+terima quest, dengar penjelasan
+Kumpulkan komponen dan collectible
+HUD dan Inventory diperbarui
+Hadapi musuh dan rintangan
+Pulse Wave memakai Energi
+Komponen wajib lengkap dan
+tantangan stage selesai?
+belum
+Khusus Stage 3: Boss encounter Bug-Zero (3 fase)
+lalu proses pemulihan Bug-Zero
+ya
+Stage 1 dan 2
+Workbench: masuk Puzzle Perakitan
+susun komponen, hubungkan kabel, Uji Rangkaian
+Rangkaian benar?
+Win Screen: stage berikutnya terbuka
+benar
+Sub-area:
+pintu, gua, tangga, lorong
+Quest NPC: jawab pertanyaan
+benar: reward komponen/item
+salah: petunjuk, coba lagi
+Peti, area tersembunyi,
+reward NPC
+Game Over (HP = 0)
+HP = 0
+Salah: korsleting kecil dan
+petunjuk Volt atau Prof. Ohm,
+ulangi puzzle. Stage 3: timer
+habis = Game Over
+salah
+Gambar 6.2 Alur gameplay dalam satu game session (Stage 1 sampai 3)
+Circuit Quest: Petualangan Rangkai IoT
+Game Design Document  |  Revisi GDevelop 5
+GDD - Circuit Quest: Petualangan Rangkai IoT  |  Proyek Akhir Mata Kuliah Pengembangan Game
+Halaman 14 dari 30
+
+6.3 Keterangan Flowchart
+Simpul
+Keterangan
+Bab
+Home Screen
+Titik awal dengan lima menu: Start, Level, Settings, Quit, About.
+9.3
+Level Select
+Memilih stage yang tersedia; stage terkunci tampil redup dan terbuka bertahap.
+9.3
+Main Map
+Eksplorasi, NPC dan quest, pengumpulan item, serta pertarungan dengan
+musuh dan rintangan.
+3, 7
+Sub-area
+Area yang diakses lewat pintu, gua, tangga, atau lorong dari peta utama.
+7.1
+Boss encounter dan
+pemulihan
+Khusus Stage 3: menghadapi Bug-Zero, lalu proses pemulihannya.
+7.4, 8.4
+Puzzle Perakitan
+Scene terpisah via Workbench: drag and drop komponen, hubungkan kabel, Uji
+Rangkaian.
+7, 10.5
+Win Screen
+Hasil rakitan ditampilkan; stage berikutnya terbuka di Level Select.
+9.3
+Game Over Screen
+Muncul saat HP = 0 atau timer puzzle final Stage 3 habis; pilihan Coba Lagi atau
+Kembali ke Menu.
+9.3
+7. Level Design
+7.1 Struktur Peta dan Scene (Model C: Hybrid)
+Setiap stage memiliki satu peta utama dengan sub-area yang dapat diakses melalui pintu, gua, tangga, atau
+lorong. Area puzzle dan perakitan khusus dapat menggunakan scene terpisah. Pendekatan ini menjaga eksplorasi
+tetap bervariasi (horizontal, vertikal, dan bawah tanah) tanpa menambah jumlah scene secara berlebihan.
+Main Map Stage (satu peta utama, bergulir horizontal)
+Nova
+platform tinggi
+jalur alternatif
+item tersembunyi
+Workbench
+Sub-area bawah tanah
+(gua / lorong)
+tangga / gua
+Ruangan tersembunyi
+(komponen, collectible)
+pintu
+Research Station
+Prof. Ohm / NPC
+pintu
+Puzzle / Assembly Scene
+(scene terpisah)
+Workbench
+Gambar 7.1 Struktur peta Hybrid: satu peta utama, sub-area, dan scene puzzle terpisah
+Circuit Quest: Petualangan Rangkai IoT
+Game Design Document  |  Revisi GDevelop 5
+GDD - Circuit Quest: Petualangan Rangkai IoT  |  Proyek Akhir Mata Kuliah Pengembangan Game
+Halaman 15 dari 30
+
+Daftar Scene
+Scene
+Fungsi
+Catatan
+Home Screen
+Menu utama (Start, Level, Settings, Quit,
+About).
+1 scene
+Level Select
+Memilih stage yang tersedia.
+1 scene
+Main Map Stage 1, 2, dan 3
+Peta utama eksplorasi, NPC, musuh,
+rintangan, dan Workbench.
+3 scene
+Sub-area (jika diperlukan)
+Gua, lorong, atau ruangan yang terhubung
+ke peta utama.
+Usulan: ditempatkan di dalam scene peta
+yang sama; scene terpisah hanya bila
+perlu. Keputusan final: 
+Perlu ditentukan
+saat implementasi
+Puzzle / Assembly Scene
+Perakitan breadboard dan validasi
+rangkaian.
+Usulan: satu scene dikonfigurasi per stage
+lewat Global Variables untuk
+menggunakan ulang event
+End Session
+Win Screen dan Game Over Screen.
+Dapat berupa satu scene dengan dua
+tampilan
+About
+Informasi game, pengembang, versi, dan
+kredit aset.
+1 scene
+Batasan lingkup peta.
+ Daftar area pada tiap stage di bawah adalah cakupan tematik. Jangan membuat map terlalu
+luas dan jangan menambahkan terlalu banyak sub-area; beberapa area dapat digabung dalam satu ruang atau
+satu peta (misalnya Ruang kontrol dan Area perakitan). Jumlah dan penempatan final sub-area: 
+Perlu ditentukan
+saat implementasi
+.
+7.2 Stage 1: Hutan Sensor (Input / Sensing)
+Fokus pembelajaran
+Input dan pengindraan.
+Misi
+Kumpulkan 4 sensor dan rakit Sistem Pemantau Lingkungan.
+Komponen wajib
+DHT22 (suhu dan kelembapan udara), Soil Moisture Sensor (kelembapan tanah), LDR
+(cahaya), PIR (gerak).
+Musuh reguler
+Bug kecil (menyerang dengan menabrak); Glitch pemalu (muncul sebentar lalu
+menghilang).
+Tantangan
+Semak berduri listrik; jembatan terputus; Environmental Challenge berupa gangguan
+listrik atau kondisi lingkungan yang tidak stabil.
+Puzzle
+Menghubungkan sensor ke papan input; memahami VCC, GND, dan pin sinyal. Salah
+sambung memunculkan percikan korsleting.
+Big Boss
+Tidak ada Big Boss Stage 1.
+Hasil stage
+Sensor Hub (terbawa ke Stage 2).
+Circuit Quest: Petualangan Rangkai IoT
+Game Design Document  |  Revisi GDevelop 5
+GDD - Circuit Quest: Petualangan Rangkai IoT  |  Proyek Akhir Mata Kuliah Pengembangan Game
+Halaman 16 dari 30
+
+Area Eksplorasi
+Area
+Fungsi dalam Gameplay
+Usulan Tipe
+Hutan permukaan
+Jalur utama platforming, musuh reguler, semak berduri listrik,
+dan jembatan terputus.
+Main Map
+Area permukiman
+Lokasi NPC warga: penjelasan masalah, quest, dan reward.
+Main Map
+Gua bawah tanah
+Jalur bawah tanah dengan collectible dan jalur alternatif.
+Sub-area
+Ruang sensor tersembunyi
+Ruang rahasia berisi komponen atau collectible tersembunyi.
+Sub-area
+Pos penelitian Prof. Ohm
+Research Station: penjelasan sensor, progres misi, dan petunjuk
+puzzle.
+Main Map atau
+Sub-area
+Bentuk final Environmental Challenge (acuan: gangguan listrik atau kondisi lingkungan tidak stabil), mekanisme
+jembatan terputus (dilewati dengan lompatan atau jalur alternatif, atau diperbaiki lewat interaksi), serta distribusi
+4 komponen wajib dan collectible pada area di atas: 
+Perlu ditentukan saat implementasi
+.
+7.3 Stage 2: Pabrik Mikrokontroler (Processing / Output)
+Fokus pembelajaran
+Pemrosesan data dan output.
+Misi
+Kumpulkan otak dan aktuator, lalu rakit Sistem Kontrol Otomatis yang membaca Sensor
+Hub dan menggerakkan alat.
+Komponen wajib
+ESP32, Modul Relay, Pompa Air Mini, Servo (atap rumah kaca), LED indikator.
+Musuh reguler
+Bug Berbaju Besi; Glitch penembak pulsa.
+Tantangan
+Conveyor belt; pintu laser; sakelar dengan urutan tertentu; Escape + Logic Challenge
+berupa pabrik yang tidak stabil.
+Puzzle
+Menghubungkan Sensor Hub ke ESP32; menghubungkan ESP32 ke relay dan aktuator;
+menyusun logika sederhana: jika kelembapan tanah rendah, pompa aktif.
+Big Boss
+Tidak ada Big Boss Stage 2.
+Hasil stage
+Smart Controller (terbawa ke Stage 3).
+Area Eksplorasi
+Area
+Fungsi dalam Gameplay
+Usulan Tipe
+Lantai produksi
+Area utama platforming dan musuh reguler.
+Main Map
+Jalur konveyor
+Conveyor belt yang mendorong Nova; bagian dari Escape +
+Logic Challenge.
+Main Map
+Ruang perawatan
+Kandidat lokasi Research Station dan collectible.
+Sub-area
+Terowongan mesin
+Jalur bawah tanah dengan pintu laser dan sakelar berurutan.
+Sub-area
+Ruang kontrol
+Tempat logika sistem: urutan sakelar dan kondisi pintu laser.
+Sub-area
+Area perakitan
+Lokasi Workbench menuju Puzzle / Assembly Scene.
+Main Map
+Logika pintu laser.
+ Pintu laser terbuka ketika pemain menyalakan sakelar dalam urutan yang benar, sehingga
+memperkenalkan logika sederhana seperti 
+jika sensor aktif maka pintu terbuka
+ sebelum pemain menyusun
+Circuit Quest: Petualangan Rangkai IoT
+Game Design Document  |  Revisi GDevelop 5
+GDD - Circuit Quest: Petualangan Rangkai IoT  |  Proyek Akhir Mata Kuliah Pengembangan Game
+Halaman 17 dari 30
+
+logika serupa di puzzle perakitan. Lokasi Research Station Stage 2 dan distribusi komponen wajib: 
+Perlu
+ditentukan saat implementasi
+.
+7.4 Stage 3: Menara Cloud (Communication / Integration)
+Fokus pembelajaran
+Komunikasi dan integrasi sistem.
+Misi
+Kumpulkan modul komunikasi, hadapi dan pulihkan Bug-Zero, lalu rakit seluruh sistem
+menjadi Smart Greenhouse.
+Komponen wajib
+Modul WiFi, Power Supply, OLED, MQTT Access Key, Cloud Dashboard.
+Musuh reguler
+Glitch yang membelah diri; Drone malware; Firewall merah. Musuh reguler tetap muncul
+sebelum pemain mencapai area boss.
+Tantangan
+Navigasi jalur data; platform energi bergerak; ruang jebakan sinyal; boss encounter
+Bug-Zero.
+Puzzle final
+Mengintegrasikan seluruh sistem: Sensor, ESP32, WiFi/MQTT, Cloud Dashboard, lalu
+Aktuator.
+Big Boss
+Bug-Zero (satu-satunya Big Boss dalam game).
+Hasil akhir
+Smart Greenhouse aktif dan Desa Sensorika pulih.
+Area Eksplorasi
+Area
+Fungsi dalam Gameplay
+Usulan Tipe
+Bagian luar menara
+Pendakian awal, platform energi bergerak, dan musuh reguler.
+Main Map
+Lobi
+Pintu masuk menara; NPC dan musuh reguler.
+Main Map
+Ruang server
+Penyimpanan komponen dan jebakan sinyal.
+Sub-area
+Jalur kabel bawah tanah
+Jalur data yang harus diikuti agar tidak tersesat.
+Sub-area
+Distribusi jaringan
+Persimpangan jalur data dan platform bergerak.
+Main Map atau
+Sub-area
+Ruang komunikasi
+Lokasi komponen komunikasi (modul WiFi dan MQTT Access
+Key).
+Sub-area
+Ruang kontrol
+Kandidat arena boss encounter dan area Workbench puzzle
+final.
+Sub-area
+Alur Penyelesaian Stage 3
+Penyelesaian cerita menggabungkan pertarungan, pemulihan karakter antagonis, dan puzzle integrasi. Setelah
+Bug-Zero dihadapi, pemain melakukan proses pemulihan lalu mengaktifkan Smart Greenhouse.
+Circuit Quest: Petualangan Rangkai IoT
+Game Design Document  |  Revisi GDevelop 5
+GDD - Circuit Quest: Petualangan Rangkai IoT  |  Proyek Akhir Mata Kuliah Pengembangan Game
+Halaman 18 dari 30
+
+1. Boss encounter
+Bug-Zero (3 fase)
+2. Proses pemulihan
+Bug-Zero
+3. Puzzle final
+Smart Greenhouse (timer)
+Hasil akhir:
+Smart Greenhouse aktif,
+Desa Sensorika pulih
+Alur data yang diintegrasikan pada puzzle final:
+Sensor
+ESP32
+WiFi / MQTT
+Cloud Dashboard
+Aktuator
+Komponen pendukung: Power Supply, OLED, Relay, Pompa Air Mini, Servo, LED, dan MQTT Access Key.
+Gambar 7.2 Alur penyelesaian Stage 3 dan rantai integrasi puzzle final
+Tahap
+Deskripsi
+1. Boss encounter
+Pemain menghadapi Bug-Zero sebagai satu-satunya Big Boss. Struktur tiga fase serangan
+dipertahankan dari GDD awal.
+2. Pemulihan Bug-Zero
+Setelah boss encounter, pemain menyelesaikan proses pemulihan atau perbaikan
+Bug-Zero.
+3. Puzzle final
+Pemain merakit Smart Greenhouse lengkap dengan timer. Seluruh komponen Stage 1
+sampai 3 harus terhubung benar: Sensor, ESP32, Relay, Pompa, Servo, WiFi, OLED, dan
+Power. Pemain mengaktifkan alur data Sensor, ESP32, WiFi/MQTT, Cloud Dashboard,
+kembali ke aktuator.
+4. Ending
+Smart Greenhouse menyala, desa kembali bercahaya, dan ending cerita ditampilkan.
+Hal yang belum ditetapkan untuk Stage 3: pola serangan tiap fase dan ketahanan Bug-Zero, lokasi arena, mekanik
+proses pemulihan (mekanik kabel konduktor ke menara pada GDD awal dapat dijadikan acuan), durasi timer
+puzzle final, serta perilaku detail Glitch yang membelah diri dan Firewall merah: 
+Perlu ditentukan saat
+implementasi
+.
+Circuit Quest: Petualangan Rangkai IoT
+Game Design Document  |  Revisi GDevelop 5
+GDD - Circuit Quest: Petualangan Rangkai IoT  |  Proyek Akhir Mata Kuliah Pengembangan Game
+Halaman 19 dari 30
+
+7.5 Ringkasan Rintangan dan Bahaya Lingkungan
+Rintangan / Bahaya
+Stage
+Perilaku
+Semak berduri listrik
+1
+Mengurangi HP saat tersentuh.
+Jembatan terputus
+1
+Celah yang harus dilewati; mekanisme melewati atau memperbaiki:
+Perlu ditentukan saat implementasi
+.
+Environmental Challenge
+1
+Gangguan listrik atau kondisi lingkungan tidak stabil: 
+Perlu ditentukan
+saat implementasi
+.
+Conveyor belt
+2
+Mendorong Nova searah belt; digunakan dalam Escape + Logic
+Challenge.
+Pintu laser
+2
+Terbuka setelah sakelar dinyalakan dalam urutan yang benar.
+Sakelar berurutan
+2
+Puzzle logika sederhana: urutan benar membuka pintu.
+Escape + Logic Challenge
+2
+Pabrik yang tidak stabil; pemain harus lolos sambil menyelesaikan
+logika sakelar.
+Navigasi jalur data
+3
+Pemain mengikuti jalur data agar tidak tersesat.
+Platform energi bergerak
+3
+Platform bergerak yang harus dinaiki dan dilompati.
+Ruang jebakan sinyal
+3
+Ruang berisi jebakan yang memberi bahaya bagi pemain.
+Zona korsleting
+1 sampai 3
+Lantai listrik yang mengurangi HP (tidak lagi mengurangi Energi).
+Besar pengurangan HP untuk seluruh bahaya di atas: 
+Perlu ditentukan saat implementasi
+.
+8. Character Design
+8.1 Daftar Karakter
+Karakter
+Peran
+Deskripsi dan Fungsi
+Nova
+Protagonis
+Teknisi muda yang cerdas dan pantang menyerah; dikendalikan
+pemain.
+Volt
+Robot pendamping
+Melayang di sisi Nova dan memberikan petunjuk singkat
+kontekstual (maksimal 2 kalimat).
+Prof. Ohm
+Technical Mentor
+Membantu Nova memahami komponen, progres misi, dan
+puzzle perakitan (lihat 8.2).
+NPC warga Desa
+Sensorika
+Pemberi quest
+Menjelaskan kondisi wilayah, memberikan quest dan pertanyaan
+IoT, serta reward (lihat 8.3).
+Bug-Zero
+Antagonis dan
+satu-satunya Big Boss
+Virus penyebab blackout Desa Sensorika; dihadapi dan
+dipulihkan pada Stage 3 (lihat 8.4).
+Musuh reguler
+Rintangan pertarungan
+Bug dan Glitch bertema malware yang menghadang di tiap stage
+(lihat 8.5).
+Desain visual final karakter (sprite, animasi, dan palet) mengikuti gaya pixel art neon biru-hijau pada Bab 5.1 dan
+Bab 9.5; detail desain: 
+Perlu ditentukan saat implementasi
+.
+Circuit Quest: Petualangan Rangkai IoT
+Game Design Document  |  Revisi GDevelop 5
+GDD - Circuit Quest: Petualangan Rangkai IoT  |  Proyek Akhir Mata Kuliah Pengembangan Game
+Halaman 20 dari 30
+
+8.2 Prof. Ohm sebagai Technical Mentor
+Prof. Ohm tidak lagi berfungsi sebagai penjaga toko atau tempat pertukaran item. Perannya adalah Technical
+Mentor dengan fungsi berikut:
+No
+Fungsi
+Keterangan
+1
+Penjelasan materi IoT
+Menerangkan konsep sesuai fokus stage (input, pemrosesan, komunikasi).
+2
+Fungsi komponen
+Menjelaskan fungsi tiap komponen yang sudah atau akan dikumpulkan.
+3
+Informasi progres misi
+Menunjukkan komponen yang masih dibutuhkan dan kemajuan stage.
+4
+Petunjuk puzzle
+Memberi petunjuk bila pemain kesulitan pada puzzle perakitan.
+5
+Proses perakitan
+Membantu pemain memahami urutan dan logika perakitan.
+Setiap stage dapat memiliki satu 
+Research Station
+ sebagai tempat interaksi dengan Prof. Ohm. Pada Stage 1
+lokasinya adalah Pos penelitian Prof. Ohm; lokasi pada Stage 2 dan 3: 
+Perlu ditentukan saat implementasi
+.
+8.3 NPC Warga Desa Sensorika
+NPC berfungsi menjelaskan kondisi wilayah, memberi konteks permasalahan, memberikan quest, mengajukan
+pertanyaan seputar materi IoT, dan memberikan reward berupa komponen atau item. Alur quest dan contoh
+pertanyaan ada pada Bab 3.6. Jumlah NPC per stage bersifat fleksibel; nama dan tampilan NPC: 
+Perlu ditentukan
+saat implementasi
+.
+8.4 Bug-Zero (Big Boss)
+Peran
+Virus utama penyebab blackout Desa Sensorika; satu-satunya Big Boss dalam game.
+Lokasi
+Stage 3 (Menara Cloud); arena: 
+Perlu ditentukan saat implementasi
+.
+Struktur pertarungan
+Tiga fase serangan (dipertahankan dari GDD awal). Pola serangan dan ketahanan tiap fase:
+Perlu ditentukan saat implementasi
+.
+Pemulihan
+Setelah pertarungan, pemain menyelesaikan proses pemulihan atau perbaikan Bug-Zero;
+mekanik: 
+Perlu ditentukan saat implementasi
+.
+Kaitan cerita
+Penyelesaian cerita menggabungkan pertarungan, pemulihan karakter antagonis, dan
+puzzle integrasi Smart Greenhouse.
+8.5 Musuh Reguler
+Tidak ada tipe musuh baru di luar daftar berikut. Varian Glitch dapat memakai objek dasar dan event yang sama
+dengan perilaku berbeda agar pengembangan lebih hemat.
+Nama
+Stage
+Perilaku
+Drop
+Bug kecil
+1
+Merayap, mengejar, dan menyerang dengan menabrak
+pemain.
+Baterai Mini
+Glitch pemalu
+1
+Muncul sebentar lalu menghilang.
+-
+Bug Berbaju Besi
+2
+Lambat, tahan serangan, serangan hentakan.
+-
+Glitch penembak pulsa
+2
+Muncul dan hilang, menembakkan pulsa lemah.
+-
+Glitch yang membelah diri
+3
+Membelah diri menjadi bentuk lebih kecil (acuan dari nama;
+jumlah pecahan: 
+Perlu ditentukan saat implementasi
+).
+-
+Circuit Quest: Petualangan Rangkai IoT
+Game Design Document  |  Revisi GDevelop 5
+GDD - Circuit Quest: Petualangan Rangkai IoT  |  Proyek Akhir Mata Kuliah Pengembangan Game
+Halaman 21 dari 30
+
+Nama
+Stage
+Perilaku
+Drop
+Drone malware
+3
+Terbang dan menjatuhkan bom data.
+Kabel Jumper
+Firewall merah
+3
+Perilaku detail: 
+Perlu ditentukan saat implementasi
+.
+-
+Drop berupa Koin dan Data Chip pada GDD awal dihapus bersama sistem ekonomi dan XP. Tanda strip (-) pada
+kolom Drop berarti tidak ada drop dari GDD awal yang dipertahankan. Drop pengganti, ketahanan musuh, dan
+damage musuh terhadap HP: 
+Perlu ditentukan saat implementasi
+.
+9. User Interface
+9.1 Kontrol
+Pemetaan berikut adalah usulan awal; pemetaan tombol final dan layout kontrol sentuh: 
+Perlu ditentukan saat
+implementasi
+.
+Aksi
+Keyboard / Mouse
+Touchscreen
+Bergerak kiri dan kanan
+A / D atau tombol panah
+Joystick virtual atau tombol arah (kiri
+bawah)
+Melompat
+W, panah atas, atau Spasi
+Tombol Lompat (kanan bawah)
+Naik atau turun tangga
+W / S atau panah atas / bawah
+Joystick atau tombol arah
+Serang (Pulse Wave)
+Klik kiri atau tombol J
+Tombol Serang (kanan bawah)
+Berinteraksi (NPC, peti, pintu,
+Workbench)
+Tombol E
+Tombol Aksi
+Inventory
+Tombol I atau dari Pause Menu
+Ikon Inventory atau dari Pause Menu
+Pause
+Tombol Esc
+Ikon Pause (kanan atas)
+Puzzle Perakitan
+Drag and drop dengan mouse
+Sentuh dan geser jari
+Kontrol sentuh dipertahankan dari GDD awal; implementasinya dikerjakan setelah kontrol keyboard dan mouse
+berfungsi.
+9.2 Tata Letak HUD (Game Session)
+Posisi
+Elemen HUD
+Kiri atas
+Indikator HP (hati) dan indikator Energi (bar).
+Kanan atas
+Tombol Pause.
+Kiri tengah (kecil)
+Progres pengumpulan komponen wajib stage ini (contoh: 3/4 terkumpul).
+Bagian atas layar
+Dialog Volt: gelembung teks kecil berisi petunjuk singkat.
+Uji layout terburuk:
+ pada HP layar kecil, tombol layar sentuh tetap bisa dijangkau satu ibu jari, dan tombol
+dibuat semi-transparan agar tidak menutupi aksi. HUD ditempatkan pada layer terpisah agar tidak ikut bergulir
+bersama kamera.
+9.3 Struktur Layar (Game Structure)
+1. Home Screen
+Home Screen wajib dipertahankan dengan lima menu:
+Circuit Quest: Petualangan Rangkai IoT
+Game Design Document  |  Revisi GDevelop 5
+GDD - Circuit Quest: Petualangan Rangkai IoT  |  Proyek Akhir Mata Kuliah Pengembangan Game
+Halaman 22 dari 30
+
+Menu
+Fungsi
+Start
+Memulai game session. Apakah memulai dari awal atau melanjutkan progres tersimpan: 
+Perlu
+ditentukan saat implementasi
+.
+Level
+Memilih stage yang tersedia (Level Select).
+Settings
+Pengaturan audio dan kontrol: volume musik, volume efek, pilihan kontrol, dan layar penuh.
+Quit
+Keluar dari game. Perilaku pada build web (browser dapat membatasi penutupan tab): 
+Perlu
+ditentukan saat implementasi
+.
+About
+Informasi game, nama dan foto pengembang serta dosen pengampu, versi game, dan kredit aset
+(lisensi aset).
+2. Level Select
+Peta Desa Sensorika dengan 3 node stage. Stage terkunci tampil redup dan terbuka bertahap setelah puzzle
+perakitan stage sebelumnya selesai.
+3. Game Session
+Eksplorasi, pertarungan, dan puzzle perakitan, lengkap dengan HUD dan tombol Pause. UI pendukung dalam
+session:
+UI
+Fungsi
+HUD Game Session
+HP, Energi, progres komponen, dan tombol Pause (Bab 9.2).
+Dialog NPC
+Kotak dialog berisi nama pembicara, teks, dan tombol lanjut.
+Tampilan pertanyaan quest
+Pertanyaan dengan pilihan jawaban; umpan balik benar atau salah beserta petunjuk.
+Inventory
+Daftar komponen misi dan item koleksi beserta jumlahnya.
+Puzzle Assembly
+Layar close-up breadboard: komponen, kabel, tombol Uji Rangkaian, dan umpan
+balik per sambungan.
+Pause Menu
+Lanjutkan, Inventory, Pengaturan, dan Kembali ke Menu.
+4. End Session
+Layar
+Isi
+Win Screen
+Animasi rangkaian menyala, hasil rakitan stage (Sensor Hub, Smart Controller, atau Smart
+Greenhouse), dan tombol Level Berikutnya atau Kembali ke Level Select.
+Game Over Screen
+Pesan penyemangat dari Volt serta tombol Coba Lagi dan Kembali ke Menu.
+5. About
+Nama dan foto pengembang serta dosen pengampu, versi game, dan daftar kredit aset (lisensi aset).
+Circuit Quest: Petualangan Rangkai IoT
+Game Design Document  |  Revisi GDevelop 5
+GDD - Circuit Quest: Petualangan Rangkai IoT  |  Proyek Akhir Mata Kuliah Pengembangan Game
+Halaman 23 dari 30
+
+9.4 Audio
+Jenis
+Rincian
+Musik latar
+Menu: elektronik santai. Stage 1: ambient sintesis hutan. Stage 2: industrial synth bertempo
+sedang. Stage 3: dramatis dan cepat. Boss (Bug-Zero): tempo tinggi. Menang dan kalah
+masing-masing jingle pendek.
+Efek suara
+Langkah, lompat, Pulse Wave, ambil item atau komponen, zap korsleting, klik UI, snap kabel
+tersambung, dan rangkaian menyala.
+Sumber (lisensi bebas)
+Kenney.nl (CC0), OpenGameArt (CC0/CC-BY), Freesound (CC0), PixabayAudio, atau dibuat
+sendiri (BFXR/sfxr untuk SFX). Catat semua kredit di layar About.
+9.5 Aset Grafis
+
+Sprite karakter, musuh, dan tile map: Kenney.nl, itch.io (aset gratis berlisensi bebas), OpenGameArt, aset
+GDevelop Asset Store (lisensi tiap aset wajib diperiksa), atau dibuat sendiri dengan Aseprite atau Piskel.
+
+Ikon komponen IoT: dibuat sendiri atau AI generated, dengan gaya seragam.
+
+Ilustrasi panel cerita dan latar menu: AI generated atau gambar sendiri.
+
+UI (tombol, panel, hati, bar): Kenney UI Pack atau dibuat sendiri.
+
+Semua sumber aset dicatat pada daftar kredit.
+10. Technical Specification
+10.1 Spesifikasi Teknis
+Item
+Spesifikasi
+Engine
+GDevelop 5
+Genre
+2D Side-Scrolling Platformer
+Technical Form / Visual
+2D (sprite-based), Pixel Art
+View
+Side-scrolling untuk eksplorasi; layar close-up breadboard untuk puzzle perakitan
+Platform
+Web / HTML5, berjalan di browser PC dan laptop; kontrol sentuh untuk mobile (lihat
+Bab 9.1)
+Device
+PC (keyboard dan mouse) dan Mobile (touchscreen)
+Resolusi
+16:9 responsif, minimal 1280x720
+Logika game
+Event-based logic GDevelop (event sheet) dengan penggunaan ulang event dan objek
+Data antar-scene
+Global Variables untuk progres stage dan inventory yang perlu dibawa antar-scene
+Pulse Wave
+Projectile object yang dikendalikan event (Bab 4.5)
+Sistem quest
+Event dan variabel untuk jawaban, status, dan reward (Bab 10.4)
+Sistem puzzle
+Validasi koneksi komponen terhadap daftar koneksi benar (Bab 10.5)
+Scene manager
+Mengatur perpindahan Home Screen, Level Select, Game Session, Puzzle, dan End
+Session
+Penyimpanan progres
+antar-sesi
+Penyimpanan permanen di browser (misalnya LocalStorage): 
+Perlu ditentukan saat
+implementasi
+Circuit Quest: Petualangan Rangkai IoT
+Game Design Document  |  Revisi GDevelop 5
+GDD - Circuit Quest: Petualangan Rangkai IoT  |  Proyek Akhir Mata Kuliah Pengembangan Game
+Halaman 24 dari 30
+
+10.2 Catatan Pengembangan
+Sesuai ketentuan tugas, game tidak dibuat dari nol. Disarankan memakai template atau contoh proyek
+platformer GDevelop 5 sebagai dasar, lalu dimodifikasi dengan sistem dan konten sendiri. Beberapa praktik yang
+disarankan:
+
+Gunakan perilaku platformer bawaan GDevelop untuk gerak dan lompat Nova, dan perilaku platform
+(termasuk tangga) untuk tile dan platform peta.
+
+Pisahkan layer game dan layer UI agar HUD tidak ikut bergulir bersama kamera.
+
+Gunakan External Events dan object groups untuk logika yang dipakai ulang di ketiga stage (HUD, Pulse Wave,
+quest, damage), agar event tidak diduplikasi.
+
+Atur penskalaan tekstur tanpa anti-aliasing (nearest) pada properti proyek agar pixel art tetap tajam.
+
+Gunakan kompresi aset dan sprite sheet agar ukuran build web tetap ringan.
+10.3 Global Variables (Usulan)
+Nama final mengikuti konvensi penamaan tim.
+Variabel
+Tipe
+Fungsi
+CurrentStage
+Number
+Stage yang sedang dimainkan; menentukan konfigurasi Puzzle
+Scene.
+StageUnlocked
+Number
+Stage tertinggi yang sudah terbuka di Level Select.
+PlayerHP
+Number
+HP Nova yang dibawa antar-scene (peta stage dan Puzzle Scene).
+PlayerEnergy
+Number
+Energi Nova yang dibawa antar-scene.
+Inventory
+Structure
+Komponen misi (terkumpul atau belum) dan jumlah Baterai Mini,
+Kabel Jumper, Hati Kapasitor.
+AssemblyResult
+Structure
+Status hasil rakitan: Sensor Hub, Smart Controller, Smart
+Greenhouse.
+QuestState
+Structure
+Status tiap quest NPC (belum, aktif, selesai).
+MusicVolume / SfxVolume
+Number
+Pengaturan volume dari menu Settings.
+ControlMode
+String
+Pilihan kontrol (keyboard atau touch).
+10.4 Sistem Quest berbasis Event dan Variabel
+Setiap quest NPC menyimpan data berikut (dalam variabel structure atau array): identitas quest, teks
+pertanyaan, daftar pilihan jawaban, jawaban benar, teks petunjuk, reward (komponen atau item), dan status.
+Event membandingkan pilihan pemain dengan jawaban benar: bila benar, status menjadi selesai dan reward
+ditambahkan ke Inventory; bila salah, petunjuk ditampilkan dan pemain dapat mencoba kembali.
+10.5 Validasi Puzzle Perakitan
+Setiap puzzle menyimpan daftar koneksi yang benar. Contoh format: 
+DHT22.VCC -> 3V3
+, 
+DHT22.DATA -> D4
+,
+DHT22.GND -> GND
+. Saat pemain menekan Uji Rangkaian, game membandingkan koneksi pemain dengan daftar
+benar dan memberi umpan balik per sambungan (hijau benar, merah salah). Komponen dan kabel diatur dengan
+drag and drop. Rangkaian yang benar menyalakan lampu dan menampilkan data sensor di layar; rangkaian yang
+salah memicu korsleting kecil dan petunjuk.
+Daftar koneksi benar (pin) untuk puzzle Stage 1, 2, dan 3, besar penalti HP akibat salah rakit (dipertahankan dari
+GDD awal), dan durasi timer puzzle final: 
+Perlu ditentukan saat implementasi
+.
+Circuit Quest: Petualangan Rangkai IoT
+Game Design Document  |  Revisi GDevelop 5
+GDD - Circuit Quest: Petualangan Rangkai IoT  |  Proyek Akhir Mata Kuliah Pengembangan Game
+Halaman 25 dari 30
+
+11. Technical Architecture
+Arsitektur sistem terdiri atas sepuluh modul yang diimplementasikan dengan event-based logic GDevelop 5.
+Modul saling berbagi data melalui Global Variables.
+Alur Game
+Game Flow /
+Scene Manager
+Level / Progress
+Manager
+Audio Manager
+Gameplay Core
+Player
+Controller
+Player
+Stats
+Projectile
+System
+Enemy
+Behaviour
+Sistem Konten
+Inventory
+System
+Quest / Dialogue
+System
+Assembly
+Puzzle
+Global Variables (GDevelop): progres stage, inventory, HP dan Energi yang dibawa antar-scene, status quest
+Gambar 11.1 Arsitektur sistem Circuit Quest pada GDevelop 5
+No
+Modul
+Tanggung Jawab
+Implementasi di GDevelop 5
+1
+Game Flow / Scene
+Manager
+Perpindahan Home Screen, Level Select, Game
+Session, Puzzle, End Session, About; kondisi pause.
+Aksi Change scene; variabel
+CurrentStage.
+2
+Player Controller
+Gerak, lompat, tangga, serang, dan interaksi Nova.
+Perilaku platformer pada object
+Nova; event input keyboard dan
+sentuh.
+3
+Player Stats
+HP, Energi, dan progres komponen; penanganan
+damage dan game over.
+Variabel object atau scene; PlayerHP
+dan PlayerEnergy untuk dibawa
+antar-scene.
+4
+Projectile System
+Pulse Wave: spawn, arah, kecepatan, collision,
+damage, pengurangan energi, penghapusan.
+Object projectile dan event collision.
+5
+Inventory System
+Menyimpan komponen misi dan collectible;
+menampilkan Inventory.
+Global Variable Inventory; event
+tambah dan pakai item.
+6
+Quest / Dialogue
+System
+Dialog NPC, pertanyaan, jawaban, status quest, dan
+reward.
+Event dan variabel (QuestState);
+objek UI dialog.
+7
+Enemy Behaviour
+Perilaku musuh reguler dan Bug-Zero (state
+sederhana: kejar, muncul-hilang, tembak, terbang).
+Event per tipe musuh; varian Glitch
+berbagi objek dasar.
+8
+Level / Progress
+Manager
+Stage terbuka, stage berjalan, dan hasil rakitan yang
+dibawa ke stage berikutnya.
+Global Variables StageUnlocked dan
+AssemblyResult.
+9
+Assembly Puzzle
+Drag and drop komponen, penyambungan kabel,
+validasi koneksi, umpan balik, dan timer final.
+Object draggable; daftar koneksi
+benar; event validasi.
+10
+Audio Manager
+Musik latar tiap scene, efek suara, dan pengaturan
+volume.
+Aksi audio GDevelop; variabel
+MusicVolume dan SfxVolume.
+Circuit Quest: Petualangan Rangkai IoT
+Game Design Document  |  Revisi GDevelop 5
+GDD - Circuit Quest: Petualangan Rangkai IoT  |  Proyek Akhir Mata Kuliah Pengembangan Game
+Halaman 26 dari 30
+
+12. Development Schedule
+12.1 Batasan dan Prioritas Pengembangan
+Tim terdiri dari sekitar 3 sampai 4 orang dengan waktu pengembangan sekitar 2 sampai 4 minggu. Karena itu:
+
+Jangan membuat map terlalu luas dan jangan menambahkan terlalu banyak sub-area.
+
+Jangan menambah tipe musuh baru.
+
+Jangan membuat sistem ekonomi.
+
+Gunakan ulang event dan objek jika memungkinkan.
+
+Prioritaskan gameplay inti yang bisa dimainkan dari awal sampai akhir.
+
+Jumlah quest NPC fleksibel sesuai waktu dan kapasitas tim.
+Prioritas utama:
+ game playable dengan tiga stage, sistem HP dan Energi, musuh, quest, inventory, serta puzzle
+perakitan. Pembagian peran anggota tim: 
+Perlu ditentukan saat implementasi
+.
+12.2 Jadwal Pengembangan (Contoh 4 Minggu)
+Minggu
+Target
+1
+Finalisasi GDD, setup proyek GDevelop 5 dari template platformer, aset dasar, Home Screen, Level Select,
+Player Controller (gerak dan lompat), HUD dasar, dan Global Variables.
+2
+Pulse Wave dan Energi, musuh reguler Stage 1, bahaya lingkungan, Inventory dan collectible, Main Map
+Stage 1 (termasuk sub-area), serta dialog NPC dan quest dasar.
+3
+Assembly Puzzle (validasi dan umpan balik), puzzle Stage 1 dan 2, Main Map Stage 2, dan quest NPC
+lanjutan.
+4
+Main Map Stage 3, Bug-Zero dan pemulihan, puzzle final, audio, About, End Session; uji coba, perbaikan
+keseimbangan HP dan Energi, export HTML5, dan publikasi (itch.io atau GitHub Pages).
+Jika waktu yang tersedia hanya 2 sampai 3 minggu, jadwal dipadatkan dengan mengurangi jumlah NPC dan quest
+serta sub-area; urutan prioritas tetap sama.
+12.3 Pengembangan Lanjutan (Opsional, Bila Ada Waktu)
+
+Codex Komponen:
+ ensiklopedia yang terbuka otomatis saat komponen ditemukan, berisi fungsi dan contoh
+pemakaian nyata.
+
+Mode Latihan Rakit:
+ ulangi puzzle tanpa musuh, cocok untuk belajar.
+
+Achievement:
+ misalnya Tanpa Korsleting (rakit tanpa salah) atau Kolektor Penuh.
+
+Level Bonus:
+ Lab Prof. Ohm dengan rangkaian tantangan Arduino klasik.
+Seluruh item di atas dikerjakan hanya setelah prioritas utama selesai, dan tidak boleh mengembalikan fitur yang
+sudah dihapus (Bab 5.3).
+Circuit Quest: Petualangan Rangkai IoT
+Game Design Document  |  Revisi GDevelop 5
+GDD - Circuit Quest: Petualangan Rangkai IoT  |  Proyek Akhir Mata Kuliah Pengembangan Game
+Halaman 27 dari 30
+
+13. Risk Management
+Risiko
+Mitigasi
+Cakupan terlalu luas (peta, sub-area,
+NPC)
+Batasi sub-area, jadikan jumlah quest fleksibel, gunakan ulang event dan objek,
+prioritaskan game playable dari awal sampai akhir.
+Puzzle perakitan terlalu rumit
+Gunakan petunjuk Volt dan Prof. Ohm, mulai dari rangkaian sederhana, dan beri
+umpan balik hijau atau merah per sambungan.
+Boss Bug-Zero dan proses pemulihan
+terlalu kompleks
+Gunakan pola serangan sederhana per fase, rancang pemulihan sesingkat
+mungkin, dan buat prototipe sejak Minggu 3.
+Ukuran build web terlalu besar
+Kompres tekstur dan audio, gunakan sprite sheet, dan batasi ukuran aset.
+Kontrol sentuh kurang nyaman
+Uji langsung di HP dan sesuaikan ukuran tombol; selesaikan kontrol keyboard
+terlebih dahulu.
+Data hilang saat pindah scene
+Kelola Global Variables dalam satu daftar terpusat dan uji perpindahan scene
+sejak awal.
+Event sheet berantakan atau konflik
+antar anggota
+Terapkan konvensi penamaan, gunakan External Events, dan tetapkan
+penanggung jawab tiap sistem.
+Keseimbangan HP dan Energi
+Playtest tiap stage dan simpan nilai di variabel agar mudah diubah.
+Waktu terbatas
+Prioritaskan fitur wajib terlebih dahulu; fitur opsional, panel cerita, dan mode
+tambahan belakangan.
+Lisensi aset tidak tercatat
+Catat semua sumber dan lisensi aset sejak awal dan tampilkan di layar About.
+Lampiran A. Hal yang Perlu Ditentukan saat Implementasi
+Daftar berikut merangkum informasi yang belum tersedia dalam GDD awal maupun brief revisi. Hal-hal ini tidak
+diberi keputusan final dalam dokumen dan ditetapkan saat implementasi.
+No
+Hal yang Perlu Ditentukan
+Bab
+1
+Nilai balancing: damage Pulse Wave, biaya Energi per tembakan, kecepatan dan jarak proyektil,
+ketahanan dan damage musuh, serta pengurangan HP akibat bahaya
+4.5, 8.5, 7.5
+2
+Nilai awal HP dan Energi final (acuan GDD awal: 5 hati dan 100 Energi)
+4.3
+3
+Jumlah NPC dan quest, daftar lengkap pertanyaan, jumlah pilihan jawaban, status quest wajib
+atau opsional, distribusi reward
+3.6
+4
+Distribusi komponen wajib (peti, area tersembunyi, reward quest) dan penempatan collectible
+7.2 - 7.4
+5
+Jumlah dan penempatan sub-area, serta metode implementasinya (dalam scene yang sama
+atau scene terpisah)
+7.1
+6
+Bentuk final Environmental Challenge Stage 1 dan mekanisme jembatan terputus
+7.2, 7.5
+7
+Pola serangan tiap fase, ketahanan, dan arena Bug-Zero; mekanik proses pemulihan
+7.4, 8.4
+8
+Durasi timer puzzle final dan besar penalti HP akibat salah rakit (dipertahankan dari GDD awal)
+10.5
+9
+Daftar koneksi benar (pin) untuk tiap puzzle perakitan
+10.5
+10
+Perilaku detail Glitch yang membelah diri dan Firewall merah; drop pengganti musuh
+8.5
+Circuit Quest: Petualangan Rangkai IoT
+Game Design Document  |  Revisi GDevelop 5
+GDD - Circuit Quest: Petualangan Rangkai IoT  |  Proyek Akhir Mata Kuliah Pengembangan Game
+Halaman 28 dari 30
+
+No
+Hal yang Perlu Ditentukan
+Bab
+11
+Lokasi Research Station Stage 2 dan 3
+8.2
+12
+Pemetaan kontrol final dan layout kontrol sentuh
+9.1
+13
+Perilaku menu Start (baru atau lanjut) dan menu Quit pada build web
+9.3
+14
+Penyimpanan progres antar-sesi browser (misalnya LocalStorage)
+10.1
+15
+Kapasitas Inventory dan jumlah Kabel Jumper yang dibutuhkan puzzle
+4.4
+16
+Jumlah dan penempatan stasiun pengisian Energi
+4.5
+17
+Isi panel cerita
+3.3
+18
+Desain visual final karakter, serta nama dan tampilan NPC
+8.1, 8.3
+19
+Pembagian peran anggota tim
+12.1
+Circuit Quest: Petualangan Rangkai IoT
+Game Design Document  |  Revisi GDevelop 5
+GDD - Circuit Quest: Petualangan Rangkai IoT  |  Proyek Akhir Mata Kuliah Pengembangan Game
+Halaman 29 dari 30
+
+Lampiran B. Ringkasan Perubahan dari GDD Awal
+Aspek
+GDD Awal
+GDD Revisi
+Engine
+Unity 2D (WebGL), alternatif Phaser 3
+GDevelop 5 (event-based), Web / HTML5
+Genre dan view
+Action-Adventure Puzzle 2D top-down
+2D Side-Scrolling Platformer
+Istilah
+Level, Nyawa, menu Mulai / Level Select /
+Opsi / About / Keluar
+Stage, HP, menu Start / Level / Settings / Quit /
+About
+Struktur peta
+Dunia top-down per level
+Model C Hybrid: peta utama, sub-area, dan scene
+puzzle
+Boss
+Bug-Beetle, Core-Crusher, dan Bug-Zero
+Hanya Bug-Zero (boss encounter, pemulihan,
+puzzle final)
+Penutup Stage 1 dan
+2
+Boss Bug-Beetle dan Core-Crusher
+Environmental Challenge (Stage 1) dan Escape +
+Logic Challenge (Stage 2)
+Ekonomi dan progres
+Koin, XP, Level Nova, booster, bintang, toko,
+penukaran item
+Dihapus seluruhnya
+Atribut
+Nyawa, Energi, Koin, XP
+HP, Energi, Progres Komponen
+Energi
+Bahan bakar Pulse Wave dan booster; zona
+korsleting ikut mengurangi Energi
+Amunisi Pulse Wave saja
+Pulse Wave
+Upgrade Plus dan Max lewat XP
+Satu jenis, tanpa upgrade
+Item koleksi
+Baterai Mini, Kabel Jumper, Data Chip, Hati
+Kapasitor
+Baterai Mini, Kabel Jumper, Hati Kapasitor (Data
+Chip dihapus)
+Aksi pemain
+Jumper Dash dan Debug Scanner (booster)
+Melompat (platformer); petunjuk dari Volt dan
+Prof. Ohm
+Prof. Ohm
+Penjaga toko dan penukaran item
+Technical Mentor dengan Research Station
+NPC dan quest
+Tidak ada
+Quest NPC berbasis pertanyaan IoT dengan
+reward komponen atau item
+Musuh
+Termasuk robot patroli rusak
+Daftar musuh per stage sesuai keputusan revisi;
+tanpa tipe baru
+Layar akhir
+Bintang, skor, XP, koin
+Win Screen dan Game Over Screen tanpa elemen
+tersebut
+Penyimpanan data
+LocalStorage (level, koin, XP, inventori)
+Global Variables antar-scene; penyimpanan
+permanen: perlu ditentukan
+Jadwal
+Contoh 6 minggu
+Contoh 4 minggu (tim 3 sampai 4 orang, 2 sampai
+4 minggu)
+Pengembangan
+lanjutan
+Termasuk Papan Skor Lokal
+Papan Skor Lokal tidak dipertahankan
+(bergantung pada skor dan bintang)
+Circuit Quest: Petualangan Rangkai IoT
+Game Design Document  |  Revisi GDevelop 5
+GDD - Circuit Quest: Petualangan Rangkai IoT  |  Proyek Akhir Mata Kuliah Pengembangan Game
+Halaman 30 dari 30

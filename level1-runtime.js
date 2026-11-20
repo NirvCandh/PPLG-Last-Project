@@ -538,8 +538,8 @@ if (!s._cq) {
     c.open(`<div class="stack"><div class="result-crest" aria-hidden="true"><span class="rune"></span>${sensorNames.map(n=>icon(n,33)).join('')}<span class="rune"></span></div>
       <header><span class="tag">STAGE 01 / SELESAI</span><h2>Sensor Hub Aktif</h2></header>
       <p>Keempat sensor sudah mengirim data ke Desa Sensorika.</p><div class="reading-grid">${readings.map(([name,value])=>`<div class="reading"><span class="tag">${name}</span><b>${value}</b></div>`).join('')}</div>
-      <div class="row"><button class="primary" id="explore" type="button">Kembali menjelajah</button><button id="restart" type="button">Main ulang</button><button id="win-title" type="button">Menu Utama</button></div></div>`,{screen:'victory'});
-    c.button('explore',c.close);c.button('restart',c.restart);c.button('win-title',c.restart);
+      <div class="row"><button class="primary" id="next-stage" type="button">Lanjut Level 2 →</button><button id="explore" type="button">Kembali menjelajah</button><button id="restart" type="button">Main ulang</button><button id="win-title" type="button">Menu Utama</button></div></div>`,{screen:'victory'});
+    c.button('next-stage',()=>{c.nextScene='Level2 Scene';});c.button('explore',c.close);c.button('restart',c.restart);c.button('win-title',c.restart);
   };
   c.defeat = () => {
     c.open(`<div class="stack"><div class="result-crest" aria-hidden="true"><span class="rune"></span>${icon('Heart',40)}<span class="rune"></span></div><header><span class="tag">NOVA / SINYAL TERPUTUS</span><h2>Game Over</h2></header>
@@ -596,7 +596,22 @@ if (!s._cq) {
   };
   c.assembly=()=>{
     const names=['DHT22','LDR','Soil','PIR'], pins=['D4','A0','A1','D5'];c.wires={};c.placed={};c.selectedChip=null;
-    c.open(`<div class="stack screen-body"><header><span class="tag">WORKBENCH / SENSOR HUB</span><h2>Rakit Sensor Hub</h2></header><p>Tarik setiap sensor ke slotnya. Untuk tiap sensor, sambungkan VCC → 3V3, GND → GND, dan sinyal ke pin input.</p><div class="row">${names.map(n=>`<button type="button" draggable="true" class="chip" data-chip="${n}" aria-pressed="false">${icon(n,40)}${n}</button>`).join('')}</div>${names.map((n,i)=>`<div class="sensor"><button type="button" class="slot" data-slot="${n}">${icon(n,32)}Letakkan ${n}</button><div class="sockets">${['VCC','GND','DATA'].map(k=>`<label>${k}<select data-wire="${n}.${k}"><option value="">--</option>${['3V3','GND',...pins].map(p=>`<option>${p}</option>`).join('')}</select></label>`).join('')}<small>${n}.DATA → ${pins[i]}</small></div></div>`).join('')}</div><footer class="screen-footer"><div id="assembly-feedback" role="status"></div><div class="row"><button class="primary" id="test">Uji Rangkaian</button><button id="back">Kembali ke hutan</button></div><p class="muted">Ketuk atau pilih sensor, lalu pilih slot. Papan ini mensimulasikan pin input analog A0/A1.</p></footer>`,{screen:'workbench'});
+    c.open(`<div class="stack screen-body"><header><span class="tag">WORKBENCH / SENSOR HUB</span><h2>Rakit Sensor Hub</h2></header><p>Tarik setiap sensor ke slotnya. Untuk tiap sensor, sambungkan VCC → 3V3, GND → GND, dan sinyal ke pin input.</p>
+      <aside id="assembly-hint" class="stack" role="note" aria-label="Petunjuk Volt untuk Sensor Hub" hidden>
+        <span class="tag">VOLT / PETUNJUK MERAKIT</span>
+        <p class="muted">1. Pasang sensor: tarik ke slot dengan nama yang sama, atau klik sensor lalu klik slotnya. Memilih kabel saja belum memasang sensor.</p>
+        <p class="muted">2. Beri daya: VCC adalah pin daya, jadi pilih <b>3V3</b>. GND adalah ground, jadi pilih <b>GND</b>. Ini berlaku untuk keempat sensor.</p>
+        <p class="muted">3. Hubungkan DATA sesuai tugas sensornya:</p>
+        <div class="stack muted">${names.map((n,i)=>`<div>${icon(n,25)} <b>${n==='Soil'?'Soil Moisture':n}</b> — ${['suhu & kelembapan udara','cahaya','kelembapan tanah','gerakan'][i]} → <b>${pins[i]}</b></div>`).join('')}</div>
+        <p class="muted">A0/A1 adalah input analog pada papan simulasi ini; D4/D5 adalah input digital. Setelah semua slot dan 12 sambungan terisi, tekan <b>Uji Rangkaian</b>. Hijau berarti benar, merah perlu diperbaiki.</p>
+      </aside>
+      <div class="row">${names.map(n=>`<button type="button" draggable="true" class="chip" data-chip="${n}" aria-pressed="false">${icon(n,40)}${n}</button>`).join('')}</div>${names.map((n,i)=>`<div class="sensor"><button type="button" class="slot" data-slot="${n}">${icon(n,32)}Letakkan ${n}</button><div class="sockets">${['VCC','GND','DATA'].map(k=>`<label>${k}<select data-wire="${n}.${k}"><option value="">--</option>${['3V3','GND',...pins].map(p=>`<option>${p}</option>`).join('')}</select></label>`).join('')}<small>${n}.DATA → ${pins[i]}</small></div></div>`).join('')}</div><footer class="screen-footer"><div id="assembly-feedback" role="status"></div><div class="row"><button class="primary" id="test">Uji Rangkaian</button><button id="assembly-hint-toggle" type="button" aria-expanded="false" aria-controls="assembly-hint">Hint Volt</button><button id="back">Kembali ke hutan</button></div><p class="muted">Ketuk atau pilih sensor, lalu pilih slot. Papan ini mensimulasikan pin input analog A0/A1.</p></footer>`,{screen:'workbench'});
+    const showHint=visible=>{
+      const hint=c.$('#assembly-hint'),button=c.$('#assembly-hint-toggle');
+      hint.hidden=!visible;button.setAttribute('aria-expanded',String(visible));button.textContent=visible?'Sembunyikan Hint':'Hint Volt';
+      if(visible)hint.scrollIntoView({block:'nearest'});
+    };
+    c.button('assembly-hint-toggle',()=>showHint(c.$('#assembly-hint').hidden));
     const chips=root.querySelectorAll('[data-chip]');
     chips.forEach(el=>{
       el.ondragstart=e=>e.dataTransfer.setData('text/plain',el.dataset.chip);
@@ -607,9 +622,9 @@ if (!s._cq) {
     });
     root.querySelectorAll('[data-slot]').forEach(el=>{el.ondragover=e=>e.preventDefault();const place=n=>{if(n===el.dataset.slot){c.placed[n]=true;el.innerHTML=icon(n,32)+'✓ '+n;el.dataset.placed='';}};el.ondrop=e=>{e.preventDefault();place(e.dataTransfer.getData('text/plain'));};el.onclick=()=>place(c.selectedChip);});
     c.button('back',c.close);c.button('test',()=>{
-      let errors=[];names.forEach((n,i)=>{if(!c.placed[n])errors.push(n+': sensor belum terpasang');['VCC','GND','DATA'].forEach((k,j)=>{const el=root.querySelector(`[data-wire="${n}.${k}"]`),ok=el.value===["3V3","GND",pins[i]][j];el.dataset.result=ok?'ok':'error';if(!ok)errors.push(n+'.'+k);});});
-      if(errors.length){c.$('#assembly-feedback').innerHTML='<p class="fail">Percikan korsleting! Periksa: '+errors.join(', ')+'. Volt: cocokkan sumber daya, ground, dan sinyal.</p>';return;}
-      s.getGame().getVariables().get('SensorHub').setNumber(1);s.getGame().getVariables().get('StageUnlocked').setNumber(2);
+      let errors=[];names.forEach((n,i)=>{if(!c.placed[n])errors.push(n+': sensor belum dipasang ke slot');['VCC','GND','DATA'].forEach((k,j)=>{const el=root.querySelector(`[data-wire="${n}.${k}"]`),expected=['3V3','GND',pins[i]][j],ok=el.value===expected;el.dataset.result=ok?'ok':'error';if(!ok)errors.push(n+'.'+k+' → '+expected);});});
+      if(errors.length){c.$('#assembly-feedback').innerHTML='<p class="fail">Volt: perbaiki '+errors.join(', ')+'.</p>';showHint(true);return;}
+      s.getGame().getVariables().get('SensorHub').setNumber(1);s.getGame().getVariables().get('AssemblyResult').getChild('SensorHub').setNumber(1);s.getGame().getVariables().get('StageUnlocked').setNumber(Math.max(2,s.getGame().getVariables().get('StageUnlocked').getAsNumber()));
       c.victory();
     });
   };
@@ -622,6 +637,7 @@ if (!s._cq) {
   solids.concat(s.getObjects('Ladder')).forEach(o=>o.hide());
 }
 const c=s._cq,p=c.player,b=c.beh,dt=Math.min(s.getElapsedTime()/1000,.05);
+if(c.nextScene){s.getGame()._cqStageTransfer={hp:c.hp,energy:c.energy};s.getGame().getVariables().get('CurrentStage').setNumber(2);c.root._cqDispose?.();c.root.remove();gdjs.evtTools.runtimeScene.replaceScene(s,c.nextScene,false);return;}
 if(c.quitRequested){gdjs.evtTools.runtimeScene.stopGame(s);return;}
 if(c.restartRequested){
  gdjs.evtTools.runtimeScene.replaceScene(s,'MainGame Scene',false);
